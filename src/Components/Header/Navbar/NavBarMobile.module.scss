@@ -1,0 +1,91 @@
+@import '../../../styles/variables';
+
+.containerNavBarMobile {
+  padding: 0;
+  margin: 0;
+  position: relative;
+  display: flex;
+}
+
+.navBarMobile {
+  @media (min-width: 600px) {
+    display: none;
+  }
+
+  @media (max-width: 600px) {
+    display: none;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 100vw;
+    position: absolute;
+    background-color: $color-light-black;
+    color: $color-1;
+    padding: 20px 0;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+
+    ul {
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      li {
+        font-family: 'Inter', sans-serif;
+        position: relative;
+        color: #fff;
+        font-size: 20px;
+        padding: 5px;
+        font-weight: 200;
+        cursor: pointer;
+
+        a {
+          font-family: 'Inter', sans-serif;
+        }
+
+        &:hover {
+          color: $color-light-purple;
+        }
+
+        &::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          right: 100%;
+          bottom: 0;
+          border-bottom: 2px solid $color-light-purple;
+          transition: right 0.3s ease;
+        }
+
+        &:hover::before {
+          right: 0;
+        }
+      }
+    }
+  }
+}
+
+.svgIcon {
+  cursor: pointer;
+  z-index: 1;
+
+  @media (min-width: 600px) {
+    display: none;
+  }
+
+  &:hover .pathThree {
+    fill: $color-9;
+  }
+
+  &:hover .pathOne {
+    fill: $color-1;
+  }
+
+  &:hover .pathTwo {
+    fill: $color-primary;
+  }
+}
