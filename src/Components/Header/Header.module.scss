@@ -1,0 +1,36 @@
+@import '../../styles/variables';
+
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: $color-light-black;
+  color: $color-1;
+  font-size: 20px;
+  border-bottom: 0.3px solid var(--color-4);
+  align-items: center;
+  height: 70px;
+  margin: 0 auto;
+  font-weight: bold;
+  text-align: center;
+  padding: 20px 100px;
+  display: flex;
+  justify-content: space-between;
+
+  h2 {
+    font-size: 24px;
+  }
+
+  @media (max-width: 1024px) {
+    padding: 20px 50px;
+  }
+
+  @media (max-width: 600px) {
+    padding: 20px 30px;
+  }
+
+    @media (max-width: 450px) {
+      padding: 20px 10px;
+    }
+}

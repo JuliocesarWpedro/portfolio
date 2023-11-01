@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Rajdhani:wght@600&display=swap');
+
+* {
+  font-family: 'Rajdhani', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  scroll-behavior: smooth;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #111;
+}
+
+blockquote,
+dd,
+h1,
+h2,
+h3,
+h4,
+p,
+ul {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+:root {
+  --color-0: #ffffff;
+  --color-1: #f7f7f7;
+  --color-2: #dedede;
+  --color-3: #cccccc;
+  --color-4: #b2b2b2;
+  --color-5: #9c9c9c;
+  --color-6: #717171;
+  --color-7: #595959;
+  --color-8: #404040;
+  --color-9: #2e2e2e;
+  --color-light-black: #111111;
+  --color-light-purple: #C3AEFF;
+  --color-purple: #A78AFB;
+  --color-secondary: #9071E9;
+  --color-primary: #6961D7;
+}
