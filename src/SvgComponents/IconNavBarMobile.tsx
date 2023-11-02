@@ -7,7 +7,7 @@ interface IconInterface {
 function IconNavBarMobile({ setOpenModal }: IconInterface) {
   return (
     <svg
-      onClick={() => setOpenModal((value) => !value)}
+    onClick={() => setOpenModal((value) => !value)}
       className={styles.svgIcon}
       xmlns="http://www.w3.org/2000/svg"
       width="64"

@@ -18,23 +18,21 @@ const Header = () => {
   });
 
   return (
-    <div className={styles.containerHeader}>
-      <motion.header
-        variants={{
-          visible: { y: 0 },
-          hidden: { y: '-250%' },
-        }}
-        animate={hidden ? 'hidden' : 'visible'}
-        transition={{ duration: 0.35, ease: 'easeInOut' }}
-        className={styles.header}
-      >
-        <h2>
-          <a href="/">Julio Cesar</a>
-        </h2>
-        <Navbar />
-        <NavBarMobile />
-      </motion.header>
-    </div>
+    <motion.header
+      variants={{
+        visible: { y: 0 },
+        hidden: { y: '-250%' },
+      }}
+      animate={hidden ? 'hidden' : 'visible'}
+      transition={{ duration: 0.35, ease: 'easeInOut' }}
+      className={styles.header}
+    >
+      <h2>
+        <a href="/">Julio Cesar</a>
+      </h2>
+      <Navbar />
+      <NavBarMobile />
+    </motion.header>
   );
 };
 
