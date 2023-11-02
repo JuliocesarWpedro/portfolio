@@ -1,5 +1,20 @@
 @import '../../../styles/variables';
 
+.languageContainer {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  background-color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: border 0.3s;
+  border: 1px solid #fff;
+  overflow: hidden;
+}
+
+
 .containerNavBarMobile {
   padding: 0;
   margin: 0;
@@ -8,9 +23,7 @@
 }
 
 .navBarMobile {
-  @media (min-width: 600px) {
-    display: none;
-  }
+  border-bottom: 1px solid $color-4;
 
   @media (max-width: 600px) {
     display: none;
@@ -32,6 +45,8 @@
       font-family: 'Inter', sans-serif;
       display: flex;
       flex-direction: column;
+      align-items: center;
+      justify-content: center;
       gap: 10px;
 
       li {
@@ -73,7 +88,7 @@
   cursor: pointer;
   z-index: 1;
 
-  @media (min-width: 600px) {
+  @media (min-width: 601px) {
     display: none;
   }
 

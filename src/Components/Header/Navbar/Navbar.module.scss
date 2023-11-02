@@ -1,5 +1,20 @@
 @import '../../../styles/variables';
 
+.languageContainer {
+  width: 40px;
+  cursor: pointer;
+  height: 40px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: border 0.3s;
+  border: 1px solid #fff;
+}
+
+
 .navBar {
   @media (max-width: 600px) {
     display: none;

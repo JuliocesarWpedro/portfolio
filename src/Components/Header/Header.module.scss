@@ -1,6 +1,8 @@
 @import '../../styles/variables';
 
 
+
+
 .header {
   position: fixed;
   top: 0;
@@ -8,7 +10,7 @@
   background-color: $color-light-black;
   color: $color-1;
   font-size: 20px;
-  border-bottom: 0.3px solid var(--color-4);
+  border-bottom: 1px solid $color-4;
   align-items: center;
   height: 70px;
   margin: 0 auto;
@@ -30,7 +32,7 @@
     padding: 20px 30px;
   }
 
-    @media (max-width: 450px) {
-      padding: 20px 10px;
-    }
+  @media (max-width: 450px) {
+    padding: 20px 10px;
+  }
 }
