@@ -1,5 +1,13 @@
 @import '../../../styles/variables';
 
+.containerModal {
+  display: none;
+
+  @media (max-width: 600px) {
+    display: flex;
+  }
+}
+
 .languageContainer {
   width: 40px;
   height: 40px;
@@ -25,8 +33,9 @@
 .navBarMobile {
   border-bottom: 1px solid $color-4;
 
+
   @media (max-width: 600px) {
-    display: none;
+    display: flex;
     top: 0;
     left: 50%;
     transform: translate(-50%, 0);

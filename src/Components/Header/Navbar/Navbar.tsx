@@ -1,4 +1,3 @@
-
 import styles from './Navbar.module.scss';
 import { useLanguage } from '../../../hooks/useLanguage';
 
@@ -22,18 +21,18 @@ const Navbar = () => {
             onClick={handleChangeLanguage}
             className={styles.languageContainer}
           >
-            <img
-              src="flag/BrazilianFlag.png
-            "
-              alt="Flag Brazilian"
-            />
+            <img src="flag/UnitedStatesFlag.png" alt="Flag United States" />
           </div>
         ) : (
           <div
             onClick={handleChangeLanguage}
             className={styles.languageContainer}
           >
-            <img src="flag/UnitedStatesFlag.png" alt="Flag United States" />
+            <img
+              src="flag/BrazilianFlag.png
+            "
+              alt="Flag Brazilian"
+            />
           </div>
         )}
       </ul>
