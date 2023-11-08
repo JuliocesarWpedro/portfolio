@@ -1,15 +1,35 @@
-$color-0: #ffffff;
-$color-1: #f7f7f7;
-$color-2: #dedede;
-$color-3: #cccccc;
-$color-4: #b2b2b2;
-$color-5: #9c9c9c;
-$color-6: #717171;
-$color-7: #595959;
-$color-8: #404040;
-$color-9: #2e2e2e;
-$color-light-black: #111111;
-$color-light-purple: #C3AEFF;
-$color-purple: #A78AFB;
-$color-secondary: #9071E9;
-$color-primary: #6961D7;
+$color-bg1: #151515;
+$color-bg2: #242424;
+$color-primary: #4ee1a0;
+$color-secondary: #d9d9d9;
+
+@mixin text-xl {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: bold;
+  font-size: 88px;
+  line-height: 88px;
+  letter-spacing: -2.5px;
+}
+
+@mixin text-l {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 56px;
+  letter-spacing: -1.5px;
+}
+
+@mixin text-m {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+@mixin text-body {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+
+}

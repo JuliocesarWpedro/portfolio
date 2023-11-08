@@ -8,8 +8,6 @@ const Header = () => {
   const { scrollY } = useScroll();
   const [hidden, setHidden] = React.useState<boolean>(false);
 
-  
-
   useMotionValueEvent(scrollY, 'change', (latest) => {
     const previous = scrollY.getPrevious();
     if (latest > previous && latest > 150) {

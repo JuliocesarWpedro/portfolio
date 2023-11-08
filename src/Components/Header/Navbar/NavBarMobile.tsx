@@ -56,34 +56,38 @@ const NavBarMobile = () => {
 
   return (
     <div ref={dropwdownRef} className={styles.containerModal}>
-      <IconNavBarMobile setOpenModal={setOpenModal} />
+      <IconNavBarMobile setOpenModal={setOpenModal} openModal={openModal} />
       {openModal && (
         <nav className={styles.navBarMobile}>
           <ul>
-            <li onClick={() => setOpenModal(false)}>
+            <li>
               <a href="#about">{translate('navBarAbout')}</a>
             </li>
-            <li onClick={() => setOpenModal(false)}>
+            <li>
               <a href="#projects">{translate('navBarProjects')}</a>
             </li>
-            <li onClick={() => setOpenModal(false)}>
+            <li>
               <a href="#contact">{translate('navBarContact')}</a>
             </li>
-            {currentLanguage == 'pt' ? (
-              <div
-                onClick={handleChangeLanguage}
-                className={styles.languageContainer}
-              >
-                <img src="flag/UnitedStatesFlag.png" alt="Flag United States" />
-              </div>
-            ) : (
-              <div
-                onClick={handleChangeLanguage}
-                className={styles.languageContainer}
-              >
-                <img src="flag/BrazilianFlag.png" alt="Flag Brazilian" />
-              </div>
-            )}
+            <li id={styles.changeLanguage} onClick={handleChangeLanguage}>
+              <a>{translate('changeLanguage')}</a>
+              {currentLanguage == 'pt' ? (
+                <div className={styles.languageContainer}>
+                  <img
+                    src="flag/UnitedStatesFlag.png"
+                    alt="Flag United States"
+                  />
+                </div>
+              ) : (
+                <div className={styles.languageContainer}>
+                  <img
+                    src="flag/BrazilianFlag.png
+            "
+                    alt="Flag Brazilian"
+                  />
+                </div>
+              )}
+            </li>
           </ul>
         </nav>
       )}

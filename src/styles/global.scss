@@ -1,60 +1,153 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Rajdhani:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap');
 
 * {
-  font-family: 'Rajdhani', sans-serif;
+  color: #fff;
+  font-family: 'Space Grotesk', sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
 }
 
-
-body {
-  scroll-behavior: smooth;
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  color: #111;
+ul,
+ol,
+a {
+  text-decoration: none;
 }
 
-blockquote,
-dd,
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
 h1,
 h2,
 h3,
 h4,
+h5,
+h6,
 p,
-ul {
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
   margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
 ul {
-  padding: 0;
   list-style: none;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
+blockquote,
+q {
+  quotes: none;
 }
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
 
 img {
   max-width: 100%;
   display: block;
-}
-
-:root {
-  --color-0: #ffffff;
-  --color-1: #f7f7f7;
-  --color-2: #dedede;
-  --color-3: #cccccc;
-  --color-4: #b2b2b2;
-  --color-5: #9c9c9c;
-  --color-6: #717171;
-  --color-7: #595959;
-  --color-8: #404040;
-  --color-9: #2e2e2e;
-  --color-light-black: #111111;
-  --color-light-purple: #C3AEFF;
-  --color-purple: #A78AFB;
-  --color-secondary: #9071E9;
-  --color-primary: #6961D7;
 }
