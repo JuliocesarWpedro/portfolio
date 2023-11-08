@@ -1,38 +1,47 @@
 @import '../../styles/variables';
 
 
-
-
 .header {
+  background-color: $color-bg2;
   position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: $color-light-black;
-  color: $color-1;
+  top: 20px;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  max-width: 93%;
+  border-radius: 3px;
   font-size: 20px;
-  border-bottom: 1px solid $color-4;
   align-items: center;
-  height: 70px;
   margin: 0 auto;
   font-weight: bold;
   text-align: center;
-  padding: 20px 100px;
+  padding: 15px 40px;
   display: flex;
   justify-content: space-between;
+  box-shadow: #606060 3px 3px 6px 0px inset,
+    #070b07 -3px -3px 6px 1px inset,
+    rgba(67, 166, 122, 0.02) 0px 3px 5px;
+
+  @media(max-width: 600px) {
+    padding: 15px 40px;
+  }
+
 
   h2 {
+    font-family: 'Space Grotesk', sans-serif;
     font-size: 24px;
+    font-weight: bold;
+    line-height: 32px;
+    letter-spacing: -0.44px;
+
+
+    a {
+      &:hover {
+        color: $color-primary;
+        transition: color 0.5s ease;
+      }
+    }
+
   }
 
-  @media (max-width: 1024px) {
-    padding: 20px 50px;
-  }
-
-  @media (max-width: 600px) {
-    padding: 20px 30px;
-  }
-
-  @media (max-width: 450px) {
-    padding: 20px 10px;
-  }
 }

@@ -1,4 +1,3 @@
-
 import styles from './Navbar.module.scss';
 import { useLanguage } from '../../../hooks/useLanguage';
 
@@ -17,25 +16,22 @@ const Navbar = () => {
         <li>
           <a href="#contact">{translate('navBarContact')}</a>
         </li>
-        {currentLanguage == 'pt' ? (
-          <div
-            onClick={handleChangeLanguage}
-            className={styles.languageContainer}
-          >
-            <img
-              src="flag/BrazilianFlag.png
+        <li id={styles.changeLanguage} onClick={handleChangeLanguage}>
+          <a>{translate('changeLanguage')}</a>
+          {currentLanguage == 'pt' ? (
+            <div className={styles.languageContainer}>
+              <img src="flag/UnitedStatesFlag.png" alt="Flag United States" />
+            </div>
+          ) : (
+            <div className={styles.languageContainer}>
+              <img
+                src="flag/BrazilianFlag.png
             "
-              alt="Flag Brazilian"
-            />
-          </div>
-        ) : (
-          <div
-            onClick={handleChangeLanguage}
-            className={styles.languageContainer}
-          >
-            <img src="flag/UnitedStatesFlag.png" alt="Flag United States" />
-          </div>
-        )}
+                alt="Flag Brazilian"
+              />
+            </div>
+          )}
+        </li>
       </ul>
     </nav>
   );

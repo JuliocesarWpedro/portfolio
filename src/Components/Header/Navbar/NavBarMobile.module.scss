@@ -1,17 +1,26 @@
 @import '../../../styles/variables';
 
+.containerModal {
+  display: none;
+
+  @media (max-width: 850px) {
+    display: flex;
+  }
+}
+
 .languageContainer {
-  width: 40px;
-  height: 40px;
+  margin-top: 3px;
+  height: 20px;
   cursor: pointer;
+  width: 20px;
   background-color: #fff;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
   transition: border 0.3s;
   border: 1px solid #fff;
-  overflow: hidden;
 }
 
 
@@ -23,18 +32,21 @@
 }
 
 .navBarMobile {
-  border-bottom: 1px solid $color-4;
 
-  @media (max-width: 600px) {
-    display: none;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, 0);
-    width: 100vw;
+  @media (max-width: 850px) {
+    background-color: #242424;
+    top: 90px;
+    left: 0;
+    right: 50%;
+    width: 93vw;
+    z-index: 1;
+    border-radius: 3px;
+    margin: 0 auto;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: #606060 3px 3px 6px 0px inset, #070b07 -3px -3px 6px 1px inset, rgba(67, 166, 122, 0.02) 0px 3px 5px;
     position: absolute;
-    background-color: $color-light-black;
-    color: $color-1;
-    padding: 20px 0;
     text-align: center;
     flex-direction: column;
     align-items: center;
@@ -42,7 +54,7 @@
 
 
     ul {
-      font-family: 'Inter', sans-serif;
+      @include text-body;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -50,20 +62,19 @@
       gap: 10px;
 
       li {
-        font-family: 'Inter', sans-serif;
+        @include text-body;
+        cursor: pointer;
         position: relative;
         color: #fff;
-        font-size: 20px;
-        padding: 5px;
-        font-weight: 200;
         cursor: pointer;
 
         a {
-          font-family: 'Inter', sans-serif;
+          @include text-body;
+
         }
 
-        &:hover {
-          color: $color-light-purple;
+        &:hover a {
+          color: $color-primary;
         }
 
         &::before {
@@ -72,7 +83,7 @@
           left: 0;
           right: 100%;
           bottom: 0;
-          border-bottom: 2px solid $color-light-purple;
+          border-bottom: 1px solid $color-primary;
           transition: right 0.3s ease;
         }
 
@@ -84,20 +95,27 @@
   }
 }
 
+#changeLanguage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  & .languageContainer:hover #changeLanguage a {
+    color: $color-primary;
+  }
+}
+
 .svgIcon {
   cursor: pointer;
   z-index: 1;
 
-  @media (min-width: 601px) {
+  @media (min-width: 851px) {
     display: none;
   }
 
   &:hover .pathThree {
-    fill: $color-9;
-  }
-
-  &:hover .pathOne {
-    fill: $color-1;
+    fill: $color-primary;
   }
 
   &:hover .pathTwo {
