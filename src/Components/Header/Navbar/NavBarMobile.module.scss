@@ -105,18 +105,21 @@
 .navBarMobile {
 
   @media (max-width: 850px) {
+    z-index: 6;
     background-color: #242424;
     top: 82px;
     left: 0;
     right: 50%;
     width: 93vw;
-    z-index: 2;
+    max-width: 100%;
     border-radius: 3px;
     margin: 0 auto;
     padding: 15px 40px;
     display: flex;
     justify-content: space-between;
-    box-shadow: #606060 3px 3px 6px 0px inset, #070b07 -3px -3px 6px 1px inset, rgba(67, 166, 122, 0.02) 0px 3px 5px;
+    box-shadow: #606060 3px 3px 6px 0px inset,
+      #0000001c -3px -3px 6px 1px inset,
+      rgba(67, 166, 122, 0.02) 0px 3px 5px;
     position: absolute;
     text-align: center;
     flex-direction: column;
