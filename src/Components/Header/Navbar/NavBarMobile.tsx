@@ -1,13 +1,17 @@
 import React from 'react';
-import IconNavBarMobile from '../../../SvgComponents/IconNavBarMobile';
+
 import styles from './NavBarMobile.module.scss';
 import { useLanguage } from '../../../hooks/useLanguage';
+import IconClose from '../../../SvgComponents/IconClose';
 
 const NavBarMobile = () => {
   const { currentLanguage, handleChangeLanguage, translate } = useLanguage();
   const dropwdownRef = React.useRef<HTMLDivElement>(null);
-
   const [openModal, setOpenModal] = React.useState<boolean>(false);
+
+  const handleModal = () => {
+    setOpenModal(!openModal);
+  };
 
   const handleClickOutsideDropdown = React.useCallback(
     (e: Event) => {
@@ -56,7 +60,22 @@ const NavBarMobile = () => {
 
   return (
     <div ref={dropwdownRef} className={styles.containerModal}>
-      <IconNavBarMobile setOpenModal={setOpenModal} openModal={openModal} />
+      <div
+        onClick={handleModal}
+        style={{ display: openModal ? 'none' : 'flex' }}
+        className={styles.menuModalClose}
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div
+        style={{ display: !openModal ? 'none' : 'flex' }}
+        className={styles.menuModalOpen}
+        onClick={handleModal}
+      >
+        <IconClose />
+      </div>
       {openModal && (
         <nav className={styles.navBarMobile}>
           <ul>
@@ -71,7 +90,7 @@ const NavBarMobile = () => {
             </li>
             <li id={styles.changeLanguage} onClick={handleChangeLanguage}>
               <a>{translate('changeLanguage')}</a>
-              {currentLanguage == 'pt' ? (
+              {currentLanguage === 'pt' ? (
                 <div className={styles.languageContainer}>
                   <img
                     src="flag/UnitedStatesFlag.png"
@@ -80,11 +99,7 @@ const NavBarMobile = () => {
                 </div>
               ) : (
                 <div className={styles.languageContainer}>
-                  <img
-                    src="flag/BrazilianFlag.png
-            "
-                    alt="Flag Brazilian"
-                  />
+                  <img src="flag/BrazilianFlag.png" alt="Flag Brazilian" />
                 </div>
               )}
             </li>
