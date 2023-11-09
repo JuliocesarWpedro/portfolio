@@ -14,6 +14,15 @@ const About = () => {
     },
   };
 
+  const imageVariants = {
+    hidden: { scale: 0, opacity: 0 },
+    visible: {
+      scale: 1,
+      opacity: 1,
+      transition: { duration: 1, ease: 'easeOut' },
+    },
+  };
+
   return (
     <div className={styles.aboutContainer}>
       <motion.div
@@ -29,10 +38,15 @@ const About = () => {
         <p>{translate('subTitleAbout')}</p>
       </motion.div>
 
-      <div className={styles.imageAbout}>
+      <motion.div
+        className={styles.imageAbout}
+        initial="hidden"
+        animate="visible"
+        variants={imageVariants}
+      >
         <div></div>
         <img src="/ImageJulio.png" alt="Imagem" />
-      </div>
+      </motion.div>
     </div>
   );
 };
