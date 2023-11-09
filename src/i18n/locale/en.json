@@ -4,6 +4,8 @@
     "navBarAbout": "About",
     "navBarProjects": "Projects",
     "navBarContact": "Contact",
-    "changeLanguage": "Change Language"
+    "changeLanguage": "Change Language",
+    "titleNameAbout": "I'm ",
+    "subTitleAbout": "I'm Developer Web"
   }
 }

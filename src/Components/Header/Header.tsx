@@ -24,7 +24,7 @@ const Header = () => {
         hidden: { y: '-250%' },
       }}
       animate={hidden ? 'hidden' : 'visible'}
-      transition={{ duration: 0.35, ease: 'easeInOut' }}
+      transition={{ duration: 0.4, ease: 'easeInOut' }}
       className={styles.header}
     >
       <h2>

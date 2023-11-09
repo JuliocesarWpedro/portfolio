@@ -5,10 +5,12 @@ import './styles/global.scss';
 import './i18n/i18n.tsx';
 import Header from './Components/Header/Header.tsx';
 import { LanguageProvider } from './context/LanguageContext.tsx';
+import ParticlesContainer from './Components/ParticlesContainer/ParticlesContainer.tsx';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <LanguageProvider>
+      <ParticlesContainer />
       <Header />
       <App />
     </LanguageProvider>

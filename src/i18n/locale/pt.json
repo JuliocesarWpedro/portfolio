@@ -4,6 +4,8 @@
     "navBarAbout": "Sobre",
     "navBarProjects": "Projetos",
     "navBarContact": "Contato",
-    "changeLanguage": "Trocar idioma"
+    "changeLanguage": "Trocar idioma",
+    "titleNameAbout": " Eu sou o ",
+    "subTitleAbout": "Desenvolvedor Web"
   }
 }

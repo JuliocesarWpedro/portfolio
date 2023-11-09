@@ -24,12 +24,15 @@
     #0000001c -3px -3px 6px 1px inset,
     rgba(67, 166, 122, 0.02) 0px 3px 5px;
 
+
+
   @media(max-width: 600px) {
     padding: 15px 40px;
   }
 
 
   h2 {
+    user-select: none;
     font-family: 'Space Grotesk', sans-serif;
     font-size: 24px;
     font-weight: bold;
