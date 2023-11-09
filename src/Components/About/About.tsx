@@ -29,7 +29,10 @@ const About = () => {
         <p>{translate('subTitleAbout')}</p>
       </motion.div>
 
-      <div className={styles.imageAbout}>imagem</div>
+      <div className={styles.imageAbout}>
+        <div></div>
+        <img src="/ImageJulio.png" alt="Imagem" />
+      </div>
     </div>
   );
 };
