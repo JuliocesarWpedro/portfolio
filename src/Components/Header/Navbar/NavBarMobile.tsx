@@ -80,15 +80,26 @@ const NavBarMobile = () => {
         <nav className={styles.navBarMobile}>
           <ul>
             <li>
-              <a href="#about">{translate('navBarAbout')}</a>
+              <a onClick={handleModal} href="#about">
+                {translate('navBarAbout')}
+              </a>
             </li>
             <li>
-              <a href="#projects">{translate('navBarProjects')}</a>
+              <a onClick={handleModal} href="#projects">
+                {translate('navBarProjects')}
+              </a>
             </li>
             <li>
-              <a href="#contact">{translate('navBarContact')}</a>
+              <a onClick={handleModal} href="#contact">
+                {translate('navBarContact')}
+              </a>
             </li>
-            <li id={styles.changeLanguage} onClick={handleChangeLanguage}>
+            <li
+              id={styles.changeLanguage}
+              onClick={() => {
+                handleChangeLanguage(), handleModal();
+              }}
+            >
               <a>{translate('changeLanguage')}</a>
               {currentLanguage === 'pt' ? (
                 <div className={styles.languageContainer}>

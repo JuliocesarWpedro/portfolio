@@ -1,11 +1,11 @@
 import styles from './App.module.scss';
-import ParticlesContainer from './Components/ParticlesContainer/ParticlesContainer';
+import About from './Components/About/About';
 
 const App = () => {
   return (
-    <div className={styles.mainContainer}>
-      <ParticlesContainer />
-    </div>
+    <main className={styles.mainContainer}>
+      <About />
+    </main>
   );
 };
 

@@ -105,6 +105,7 @@
 .navBarMobile {
 
   @media (max-width: 850px) {
+    user-select: none;
     z-index: 6;
     background-color: #242424;
     top: 82px;
