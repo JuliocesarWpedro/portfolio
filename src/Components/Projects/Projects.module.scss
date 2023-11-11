@@ -1,0 +1,49 @@
+@import '../../styles/variables';
+
+.projectsContainer {
+  margin-top: 200px;
+  position: relative;
+  padding: 0px 20px;
+  z-index: 1;
+}
+
+.identificationContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media(max-width: 1050px) {
+    flex-direction: column;
+  }
+
+  button {
+    border: none;
+    @include text-body;
+    position: relative;
+    color: #000;
+    padding: 0px 10px;
+    border-radius: 1px;
+    outline: none;
+    height: 50px;
+    width: 200px;
+    cursor: pointer;
+    background-color: $color-primary;
+
+      @media(max-width: 1050px) {
+         display: none;
+        }
+
+    &:hover {
+      background-color: darken($color-primary, 10%);
+      color: white;
+      border: 1px solid $color-primary
+    }
+  }
+}
+
+
+.titleProjectContainer {
+
+  @include text-l;
+  font-size: 70px;
+}
