@@ -30,6 +30,18 @@ const projects: Project[] = [
     urlGitHub: 'https://github.com/JuliocesarWpedro/pokedexNext',
     urlProject: 'https://pokedex-next-julio.vercel.app/',
   },
+  {
+    srcImage: '/Pokedex.png',
+    altImage: 'Projeto Pokedex',
+    urlGitHub: 'https://github.com/JuliocesarWpedro/pokedexNext',
+    urlProject: 'https://pokedex-next-julio.vercel.app/',
+  },
+  {
+    srcImage: '/Pokedex.png',
+    altImage: 'Projeto Pokedex',
+    urlGitHub: 'https://github.com/JuliocesarWpedro/pokedexNext',
+    urlProject: 'https://pokedex-next-julio.vercel.app/',
+  },
 ];
 
 const Projects = () => {
@@ -57,9 +69,9 @@ const Projects = () => {
           modules={[Pagination, Navigation]}
           className="mySwiper"
         >
-          {projects.map((project) => {
+          {projects.map((project, index) => {
             return (
-              <SwiperSlide className={styles.swiperSlideCard}>
+              <SwiperSlide key={index} className={styles.swiperSlideCard}>
                 <img src={project.srcImage} alt={project.altImage} />
                 <div className={styles.projectsSlideLinks}>
                   <a
