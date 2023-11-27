@@ -24,7 +24,7 @@ const About = () => {
   };
 
   return (
-    <div className={styles.aboutContainer}>
+    <div className={styles.aboutContainer} id="about">
       <motion.div
         className={styles.titleAboutContainer}
         initial="hidden"

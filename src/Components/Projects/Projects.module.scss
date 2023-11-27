@@ -1,0 +1,152 @@
+@import '../../styles/variables';
+
+.projectsContainer {
+  margin-top: 200px;
+  position: relative;
+  padding: 10px 20px;
+  z-index: 1;
+}
+
+.arrowSlider {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.identificationContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 60px;
+
+  @media(max-width: 1050px) {
+    flex-direction: column;
+  }
+
+  button {
+    border: none;
+    @include text-body;
+    position: relative;
+    color: #fff;
+    padding: 0px 10px;
+    border-radius: 1px;
+    outline: none;
+    height: 50px;
+    width: 200px;
+    cursor: pointer;
+    background-color: $color-primary;
+
+    @media(max-width: 1050px) {
+      margin-top: 20px;
+      height: 40px;
+      width: 160px;
+    }
+
+    &:hover {
+      background-color: darken($color-primary, 10%);
+      color: white;
+      border: 1px solid $color-primary;
+    }
+  }
+}
+
+
+.titleProjectContainer {
+  @include text-l;
+  font-size: 57px;
+}
+
+.swiperSlide {
+  background-color: #000;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 500px !important;
+  height: 150px !important;
+}
+
+.swiperSlideCard:hover .projectsSlideLinks {
+  display: flex;
+}
+
+.projectsSlideLinks {
+
+  &:hover {
+    opacity: 1;
+  }
+
+  z-index: 6 !important;
+  top: 78%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  max-width: 93%;
+  display: none;
+  overflow: hidden;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 100px;
+  border-radius: 30px;
+  color: white;
+  position: absolute;
+  height: 65px;
+  max-height: 100%;
+  box-shadow: #606060 3px 3px 6px 0px inset,
+  #0000001c -3px -3px 6px 1px inset,
+  rgba(67, 166, 122, 0.02) 0px 3px 5px;
+  background-color: $color-bg2;
+  opacity: 0.9;
+
+  @media (max-width:1050px) {
+    display: flex;
+  }
+
+  @media (max-width:900px) {
+    padding: 0 80px;
+  }
+
+  @media (max-width:800px) {
+    padding: 0 70px;
+  }
+
+  @media (max-width:750px) {
+    top: 74%;
+    padding: 0 60px;
+  }
+
+  @media (max-width: 700px) {
+    top: 67%;
+    padding: 0 40px;
+  }
+
+  @media (max-width: 650px) {
+    padding: 0 30px;
+  }
+
+  @media (max-width: 450px) {
+    padding: 0 20px;
+    top: 63%;
+  }
+
+
+
+  a {
+    @include text-body;
+    padding: 3px 5px;
+    letter-spacing: 2.29px;
+    font-weight: 500;
+    border-bottom: 2px solid $color-primary;
+
+    @media (max-width: 550px) {
+      font-size: 13px;
+    }
+
+    &:hover {
+      color: $color-primary;
+    }
+
+    max-width: max-content;
+    width: max-content;
+    cursor: pointer;
+  }
+}

@@ -17,7 +17,7 @@ const Navbar = () => {
           <a href="#contact">{translate('navBarContact')}</a>
         </li>
         <li id={styles.changeLanguage} onClick={handleChangeLanguage}>
-          <a>{translate('changeLanguage')}</a>
+          <button>{translate('changeLanguage')}</button>
           {currentLanguage == 'pt' ? (
             <div className={styles.languageContainer}>
               <img src="flag/UnitedStatesFlag.png" alt="Flag United States" />
