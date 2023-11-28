@@ -1,7 +1,7 @@
 @import '../../styles/variables';
 
 .projectsContainer {
-  margin-top: 200px;
+  margin-top: 100px;
   position: relative;
   padding: 60px 80px 0 80px;
   z-index: 1;
@@ -35,12 +35,14 @@
     flex-direction: column;
   }
 
-  button {
+  a {
     border: none;
+    display: flex;
+    align-items: center;
     @include text-body;
+    justify-content: center;
     position: relative;
     color: #fff;
-    padding: 0px 10px;
     border-radius: 1px;
     outline: none;
     height: 50px;
