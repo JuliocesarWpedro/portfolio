@@ -49,7 +49,7 @@ const Projects = () => {
     <div id="projects" className={styles.projectsContainer}>
       <div className={styles.identificationContainer}>
         <h1 className={styles.titleProjectContainer}>Projects</h1>
-        <button>Contact-me</button>
+        <a href="#contact">Contact-me</a>
       </div>
       <div>
         <Swiper
