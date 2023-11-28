@@ -1,0 +1,152 @@
+@import '../../styles/variables';
+
+.contactContainer {
+  width: 100%;
+  background-color: $color-bg2;
+  margin-top: 200px;
+  position: relative;
+  padding: 60px 80px 80px;
+  z-index: 1;
+
+  @media (max-width: 900px) {
+    padding: 60px 80px 0 80px;
+  }
+
+  @media (max-width: 850px) {
+    padding: 60px 35px 0 35px;
+  }
+
+  @media (max-width: 500px) {
+    padding: 60px 20px 0 20px;
+  }
+}
+
+.contactContainer {
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  @media(max-width: 1050px) {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.contactText {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+
+  h2 {
+    @include text-l;
+    font-size: 57px;
+  }
+
+  p {
+    @include text-body;
+    max-width: 450px;
+  }
+
+  @media(max-width: 1050px) {
+    padding-bottom: 45px;
+  }
+}
+
+.formContact {
+
+
+  width: 35%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  span {
+    padding-top: 10px;
+    text-align: end;
+    align-items: flex-end;
+    color: $color-error;
+  }
+
+  @media(max-width: 1200px) {
+    width: 40%;
+  }
+
+  @media(max-width: 1050px) {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  input {
+    font-size: 16px;
+    font-weight: medium;
+    font-family: 'Space Grotesk', sans-serif;
+    background: transparent;
+    border: none;
+    padding: 15px;
+    color: $color-secondary;
+    letter-spacing: -0.22px;
+    border-bottom: 1px solid #fff;
+    outline: none;
+
+
+
+    @media(max-width: 1050px) {
+      width: 100%;
+      max-width: 100%;
+    }
+
+
+
+  }
+
+  textarea {
+    resize: none;
+    background: transparent;
+    text-transform: uppercase;
+    border: none;
+    padding: 15px;
+    color: #f7f7f7;
+    border-bottom: 1px solid #fff;
+    outline: none;
+
+    @media(max-width: 1050px) {
+      width: 100%;
+      max-width: 100%;
+    }
+
+
+  }
+
+  button {
+    cursor: pointer;
+    padding: 15px 0;
+    margin-top: 15px;
+    background: transparent;
+    font-weight: bold;
+    letter-spacing: 2.29px;
+    text-transform: uppercase;
+    border: none;
+    line-height: 26px;
+    color: #fff;
+    max-width: max-content;
+    display: block;
+    border-bottom: 1px solid $color-primary;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}
+
+.validInput {
+  border-bottom: 1px solid $color-primary;
+}
+
+.invalidInput {
+  border-bottom: 1px solid $color-error;
+}

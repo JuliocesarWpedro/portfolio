@@ -3,19 +3,6 @@
 .mainContainer {
   height: 3000px;
   background-color: $color-bg1;
-  padding: 103px 80px 0 80px;
+  padding: 103px 0;
 
-  @media (max-width: 900px) {
-    padding: 103px 80px 0 80px;
-  }
-
-  @media (max-width: 850px) {
-    padding: 103px 35px 0 35px;
-  }
-
-
-
-  @media (max-width: 500px) {
-    padding: 103px 20px 0 20px;
-  }
 }
