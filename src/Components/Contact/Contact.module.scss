@@ -72,6 +72,7 @@
   flex-direction: column;
 
   span {
+    user-select: none;
     display: flex;
     justify-content: end;
     color: $color-error;
@@ -141,10 +142,6 @@
 
     @media(max-width:650px) {
       width: 100%;
-    }
-
-    @media(max-width:350px) {
-      width: 70%;
     }
   }
 

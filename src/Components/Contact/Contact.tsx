@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './Contact.module.scss';
 import { SubmitHandler, FieldValues, useForm } from 'react-hook-form';
 import { AiOutlineExclamationCircle } from 'react-icons/ai';
+import ElementDetail from '../../SvgComponents/ElementDetail';
 const Contact = () => {
   const {
     register,
@@ -22,6 +23,7 @@ const Contact = () => {
   };
   return (
     <div id="contact" className={styles.contactContainer}>
+      <ElementDetail  />
       <div className={styles.contactText}>
         <h2>Contact</h2>
         <p>
