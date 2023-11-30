@@ -202,6 +202,7 @@
 
     &:hover {
       color: $color-primary;
+      transition: color 0.2s ease;
     }
   }
 }
