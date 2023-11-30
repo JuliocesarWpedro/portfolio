@@ -11,10 +11,12 @@
   }
 
   @media (max-width: 850px) {
+    margin-top: 50px;
     padding: 60px 35px 0 35px;
   }
 
   @media (max-width: 500px) {
+    margin-top: 30px;
     padding: 60px 20px 0 20px;
   }
 }
@@ -136,12 +138,13 @@
   }
 
   @media (max-width:750px) {
-    top: 74%;
+    top: 77%;
     padding: 0 60px;
+    height: 58px;
   }
 
   @media (max-width: 700px) {
-    top: 67%;
+    top: 72%;
     padding: 0 40px;
   }
 
@@ -166,6 +169,10 @@
     }
 
     &:hover {
+      color: $color-primary;
+    }
+
+    @media (max-width:800px) {
       color: $color-primary;
     }
 

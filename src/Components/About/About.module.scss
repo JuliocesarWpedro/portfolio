@@ -101,6 +101,10 @@
   width: 400px;
   height: 400px;
 
+  @media (max-width: 525px) {
+    margin-top: 20px;
+  }
+
   div {
     display: block;
     content: "";
