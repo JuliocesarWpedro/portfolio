@@ -1,12 +1,14 @@
 import React from 'react';
 import styles from './Contact.module.scss';
 import { SubmitHandler, FieldValues, useForm } from 'react-hook-form';
-
+import { AiOutlineExclamationCircle } from 'react-icons/ai';
+import ElementDetail from '../../SvgComponents/ElementDetail';
 const Contact = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm();
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
@@ -17,9 +19,11 @@ const Contact = () => {
       assunto,
     )}&body=${encodeURIComponent(corpo)}`;
     window.open(gmailLink, '_blank');
+    reset();
   };
   return (
     <div id="contact" className={styles.contactContainer}>
+      <ElementDetail  />
       <div className={styles.contactText}>
         <h2>Contact</h2>
         <p>
@@ -32,34 +36,77 @@ const Contact = () => {
         action=""
         className={styles.formContact}
       >
-        <input
-          type="text"
-          placeholder="NAME"
-          {...register('Name', { required: true })}
-        />
-        {errors.Name && <span>Sorry, name is required</span>}
+        <div className={styles.inputNameContainer}>
+          <input
+            className={styles.inputName}
+            style={{
+              borderBottom: errors.Name
+                ? '1px solid #ff6f5b'
+                : '1px solid #fff',
+            }}
+            type="text"
+            placeholder="NAME"
+            {...register('Name', { required: true })}
+          />
+          {errors.Name && <span>Sorry, name is required</span> && (
+            <div className={styles.errorContainer}>
+              <span>Sorry, name is required</span>
+              <AiOutlineExclamationCircle
+                className={styles.iconExclamationName}
+              />
+            </div>
+          )}
+        </div>
+        <div className={styles.inputEmailContainer}>
+          <input
+            className={styles.inputEmail}
+            style={{
+              borderBottom: errors.Email
+                ? '1px solid #ff6f5b'
+                : '1px solid #fff',
+            }}
+            type="text"
+            placeholder="EMAIL"
+            {...register('Email', {
+              required: 'Please enter your email',
+              pattern: {
+                value: /^\S+@\S+$/i,
+                message: 'Please enter a valid email address',
+              },
+              shouldUnregister: true,
+            })}
+          />
+          {errors.Email && (
+            <div className={styles.errorContainer}>
+              <span>{String(errors.Email.message)}</span>
+              <AiOutlineExclamationCircle
+                className={styles.iconExclamationEmail}
+              />
+            </div>
+          )}
+        </div>
+        <div className={styles.inputMessageContainer}>
+          <textarea
+            className={styles.inputMessage}
+            style={{
+              borderBottom: errors.Message
+                ? '1px solid #ff6f5b'
+                : '1px solid #fff',
+            }}
+            placeholder="MESSAGE"
+            rows={5}
+            {...register('Message', { required: true })}
+          ></textarea>
+          {errors.Message && (
+            <div className={styles.errorContainer}>
+              <span>Sorry, message is required</span>
+              <AiOutlineExclamationCircle
+                className={styles.iconExclamationMessage}
+              />
+            </div>
+          )}
+        </div>
 
-        <input
-          type="text"
-          className={errors.Email ? styles.errorInput : styles.validInput}
-          placeholder="EMAIL"
-          {...register('Email', {
-            required: 'Please enter your email',
-            pattern: {
-              value: /^\S+@\S+$/i,
-              message: 'Please enter a valid email address',
-            },
-            shouldUnregister: true,
-          })}
-        />
-        {errors.Email && <span>{String(errors.Email.message)}</span>}
-
-        <textarea
-          placeholder="MESSAGE"
-          rows={5}
-          {...register('Message', { required: true })}
-        ></textarea>
-        {errors.Message && <span>Sorry, message is required</span>}
         <button type="submit">Send Message</button>
       </form>
     </div>

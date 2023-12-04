@@ -2,6 +2,9 @@
 
 .contactContainer {
   width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
   background-color: $color-bg2;
   margin-top: 100px;
   position: relative;
@@ -22,20 +25,20 @@
 }
 
 .contactContainer {
-
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-
   @media(max-width: 1050px) {
     flex-direction: column;
     text-align: center;
     align-items: center;
     justify-content: center;
   }
+
+  @media(max-width: 700px) {
+    margin-top: 50px;
+  }
 }
 
 .contactText {
+
   display: flex;
   flex-direction: column;
   gap: 35px;
@@ -52,21 +55,26 @@
 
   @media(max-width: 1050px) {
     padding-bottom: 45px;
+    align-items: center;
+    justify-content: center;
+
+    p {
+      max-width: 90%;
+    }
   }
 }
 
 .formContact {
-
-
-  width: 35%;
+  align-items: end;
+  width: 70%;
   max-width: 100%;
   display: flex;
   flex-direction: column;
 
   span {
-    padding-top: 10px;
-    text-align: end;
-    align-items: flex-end;
+    user-select: none;
+    display: flex;
+    justify-content: end;
     color: $color-error;
   }
 
@@ -82,6 +90,7 @@
   }
 
   input {
+    width: 100%;
     font-size: 16px;
     font-weight: medium;
     font-family: 'Space Grotesk', sans-serif;
@@ -93,18 +102,14 @@
     border-bottom: 1px solid #fff;
     outline: none;
 
-
-
     @media(max-width: 1050px) {
       width: 100%;
       max-width: 100%;
     }
-
-
-
   }
 
   textarea {
+    width: 100%;
     resize: none;
     background: transparent;
     text-transform: uppercase;
@@ -122,7 +127,62 @@
 
   }
 
+  .inputNameContainer,
+  .inputEmailContainer,
+  .inputMessageContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    width: 70%;
+    position: relative;
+
+    @media(max-width:1050px) {
+      width: 80%;
+    }
+
+    @media(max-width:650px) {
+      width: 100%;
+    }
+  }
+
+
+  .inputMessage,
+  .inputEmail,
+  .inputName {
+    margin-bottom: 10px;
+  }
+
+  .iconExclamationName {
+    position: absolute;
+    top: 21%;
+    right: 10px;
+    color: #ff6f5b;
+    font-size: 18px;
+    fill: #ff6f5b;
+  }
+
+  .iconExclamationEmail {
+    position: absolute;
+    top: 21%;
+    right: 10px;
+    color: #ff6f5b;
+    font-size: 18px;
+    fill: #ff6f5b;
+  }
+
+  .iconExclamationMessage {
+    position: absolute;
+    top: 10%;
+    right: 10px;
+    font-size: 18px;
+    fill: #ff6f5b;
+  }
+
+
   button {
+    display: flex;
+    justify-content: end;
+    align-items: end;
     cursor: pointer;
     padding: 15px 0;
     margin-top: 15px;
@@ -134,19 +194,15 @@
     line-height: 26px;
     color: #fff;
     max-width: max-content;
-    display: block;
     border-bottom: 1px solid $color-primary;
+
+    @media(max-width: 1050px) {
+      font-size: 18px;
+    }
 
     &:hover {
       color: $color-primary;
+      transition: color 0.2s ease;
     }
   }
-}
-
-.validInput {
-  border-bottom: 1px solid $color-primary;
-}
-
-.invalidInput {
-  border-bottom: 1px solid $color-error;
 }
