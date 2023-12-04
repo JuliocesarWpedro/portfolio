@@ -13,7 +13,7 @@ const Contact = () => {
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     const destinatario = 'juliowanke@gmail.com';
-    const assunto = data.Name;
+    const assunto = data.Subject;
     const corpo = data.Message;
     const gmailLink = `https://mail.google.com/mail/?view=cm&to=${destinatario}&su=${encodeURIComponent(
       assunto,
@@ -23,7 +23,7 @@ const Contact = () => {
   };
   return (
     <div id="contact" className={styles.contactContainer}>
-      <ElementDetail  />
+      <ElementDetail />
       <div className={styles.contactText}>
         <h2>Contact</h2>
         <p>
@@ -66,19 +66,15 @@ const Contact = () => {
                 : '1px solid #fff',
             }}
             type="text"
-            placeholder="EMAIL"
-            {...register('Email', {
-              required: 'Please enter your email',
-              pattern: {
-                value: /^\S+@\S+$/i,
-                message: 'Please enter a valid email address',
-              },
+            placeholder="SUBJECT"
+            {...register('Subject', {
+              required: 'Please enter the subject',
               shouldUnregister: true,
             })}
           />
-          {errors.Email && (
+          {errors.Subject && (
             <div className={styles.errorContainer}>
-              <span>{String(errors.Email.message)}</span>
+              <span>{String(errors.Subject.message)}</span>
               <AiOutlineExclamationCircle
                 className={styles.iconExclamationEmail}
               />
