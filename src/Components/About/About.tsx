@@ -1,6 +1,15 @@
 import { motion } from 'framer-motion';
 import styles from './About.module.scss';
 import { useLanguage } from '../../hooks/useLanguage';
+import { FaReact } from 'react-icons/fa';
+import { IoLogoJavascript } from 'react-icons/io5';
+import { BiLogoTypescript } from 'react-icons/bi';
+import { SiNextdotjs } from 'react-icons/si';
+import { GrGraphQl } from 'react-icons/gr';
+import { BsFiletypeScss } from 'react-icons/bs';
+import { FaNode } from 'react-icons/fa';
+import { FaGithub } from 'react-icons/fa';
+import { FaLinkedin } from 'react-icons/fa';
 
 const About = () => {
   const { translate } = useLanguage();
@@ -31,22 +40,49 @@ const About = () => {
         animate="visible"
         variants={containerVariants}
       >
-        <h2 className={styles.titleAbout}>
-          {translate('titleNameAbout')}
-          <span>Julio Cesar</span>
-        </h2>
-        <p>{translate('subTitleAbout')}</p>
+        <div className={styles.titleDescription}>
+          <h2 className={styles.titleAbout}>
+            {translate('titleNameAbout')}
+            <span>Julio Cesar</span>
+          </h2>
+          <p>{translate('subTitleAbout')}</p>
+        </div>
+
+        <div className={styles.IconsContainer}>
+          <FaReact />
+          <IoLogoJavascript />
+          <BiLogoTypescript />
+          <SiNextdotjs />
+          <GrGraphQl />
+          <BsFiletypeScss />
+          <FaNode />
+        </div>
       </motion.div>
 
-      <motion.div
-        className={styles.imageAbout}
-        initial="hidden"
-        animate="visible"
-        variants={imageVariants}
-      >
-        <div></div>
-        <img src="/ImageJulio.png" alt="Imagem" />
-      </motion.div>
+      <div className={styles.aboutContainerRight}>
+        <motion.div
+          className={styles.imageAbout}
+          initial="hidden"
+          animate="visible"
+          variants={imageVariants}
+        >
+          <div></div>
+          <img src="/ImageJulio.png" alt="Imagem" />
+        </motion.div>
+        <div className={styles.linksSocialMedia}>
+          <a target="__blank" href="https://github.com/JuliocesarWpedro">
+            <p>Go to GitHub</p>
+            <FaGithub />
+          </a>
+          <a
+            target="__blank"
+            href="https://www.linkedin.com/in/j%C3%BAlio-c%C3%A9sar-wanderosfky-977301297/"
+          >
+            <p>Go to Linkedin</p>
+            <FaLinkedin />
+          </a>
+        </div>
+      </div>
     </div>
   );
 };

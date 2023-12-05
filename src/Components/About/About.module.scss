@@ -1,7 +1,7 @@
 @import '../../styles/variables';
 
 .aboutContainer {
-  padding: 50px 80px 0 80px;
+  padding: 30px 80px 0 80px;
   position: relative;
   z-index: 1;
   display: flex;
@@ -12,18 +12,13 @@
     flex-direction: column;
   }
 
-  @media (max-width: 900px) {
-    padding: 60px 80px 0 80px;
-  }
-
   @media (max-width: 850px) {
-    padding: 60px 35px 0 35px;
+    padding: 30px 35px 0 35px;
   }
 
   @media (max-width: 524px) {
     padding: 20px 20px 0 20px;
   }
-
 }
 
 .titleAboutContainer {
@@ -82,9 +77,6 @@
     @include text-body;
     font-size: 45px;
 
-    @media(max-width:900px) {
-      margin-top: 0px;
-    }
 
     @media (max-width: 620px) {
       font-size: 35px;
@@ -96,13 +88,64 @@
   }
 }
 
+.IconsContainer {
+  max-width: 400px;
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+
+  @media(max-width: 1050px) {
+    margin-bottom: 30px;
+  }
+
+  @media(max-width: 770px) {
+    max-width: 350px;
+    margin-top: 10px;
+  }
+
+
+
+  svg {
+    color: $color-secondary;
+    fill: $color-secondary;
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+
+
+.aboutContainerRight {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.titleDescription {
+  margin-bottom: 50px;
+  padding-top: 48px;
+
+  @media(max-width:1050px) {
+    padding-top: 0px;
+  }
+
+  @media(max-width:770px) {
+    margin-bottom: 20px;
+  }
+}
+
 .imageAbout {
   position: relative;
   width: 400px;
-  height: 400px;
+  height: 360px;
 
-  @media (max-width: 525px) {
-    margin-top: 20px;
+  @media (max-width: 530px) {
+    margin-top: 40px;
+    height: 350px;
   }
 
   div {
@@ -122,6 +165,12 @@
       left: 12%;
       height: 273.1px;
     }
+
+    @media (max-width: 350px) {
+      width: 229.1px;
+      left: 12%;
+      height: 233.1px;
+    }
   }
 
   img {
@@ -132,5 +181,51 @@
   @media (max-width: 1150px) {
     width: 350px;
     height: 350px;
+  }
+
+
+  @media (max-width: 350px) {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+.linksSocialMedia {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+
+  @media(max-width:530px) {
+    flex-direction: column;
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 200px;
+    gap: 10px;
+    color: #fff;
+    padding: 0 10px;
+    border-radius: 1px;
+    background-color: $color-primary;
+
+    &:hover {
+      transition: background-color 0.3s ease;
+      background-color: darken($color-primary, 20%);
+      color: white;
+      border: 1px solid $color-primary;
+    }
+
+    p {
+      @include text-body;
+    }
+
+    svg {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
   }
 }
