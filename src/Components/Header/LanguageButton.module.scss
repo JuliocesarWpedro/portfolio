@@ -1,0 +1,100 @@
+@import '../../styles/variables';
+
+.LanguageContainer {
+  position: relative;
+  z-index: 7;
+
+  .languageIcons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #242424;
+    border-radius: 15px;
+    padding: 10px 5px;
+    border: 1px solid #47ffae2b;
+    cursor: pointer;
+    position: relative;
+    gap: 5px;
+    width: max-content;
+
+    &:hover {
+      svg {
+        fill: $color-primary;
+      }
+
+      border: 1px solid $color-primary;
+      background-color: #242424;
+      color: $color-primary;
+    }
+
+  }
+
+  .languageIconsOpen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #242424;
+    fill: $color-primary;
+    border-radius: 15px;
+    padding: 10px 5px;
+    border: 1px solid #47ffae2b;
+    cursor: pointer;
+    position: relative;
+    gap: 5px;
+    width: max-content;
+    border: 1px solid $color-primary;
+    background-color: #242424;
+    color: $color-primary;
+
+    &:hover {
+      svg {
+        fill: $color-primary;
+      }
+
+      border: 1px solid $color-primary;
+      background-color: #242424;
+      color: $color-primary;
+    }
+  }
+
+  .languageList {
+    position: absolute;
+    right: 0;
+    background-color: #fff;
+    display: flex;
+    top: 50px;
+    border-radius: 15px;
+    flex-direction: column;
+    @include text-body;
+    gap: 20px;
+    padding: 10px;
+    text-align: left;
+
+    .languageOptionChosen {
+      padding: 10px;
+      background-color: $color-primary;
+      font-weight: 500;
+      color: $color-bg1;
+      border-radius: 15px;
+
+      &:hover {
+        color: $color-bg1;
+        background-color: $color-primary;
+      }
+    }
+
+    .languageOption {
+      color: $color-bg2;
+      cursor: pointer;
+      padding: 10px;
+
+      &:hover {
+        color: $color-primary;
+        background-color: $color-bg2;
+        border-radius: 15px;
+
+      }
+    }
+
+  }
+}

@@ -6,8 +6,8 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { MdOutlineArrowLeft } from 'react-icons/md';
 import { MdOutlineArrowRight } from 'react-icons/md';
-
 import { Pagination, Navigation } from 'swiper/modules';
+import { useLanguage } from '../../hooks/useLanguage';
 
 interface Project {
   srcImage: string;
@@ -45,11 +45,14 @@ const projects: Project[] = [
 ];
 
 const Projects = () => {
+  const { translate } = useLanguage();
   return (
     <div id="projects" className={styles.projectsContainer}>
       <div className={styles.identificationContainer}>
-        <h1 className={styles.titleProjectContainer}>Projects</h1>
-        <a href="#contact">Contact-me</a>
+        <h1 className={styles.titleProjectContainer}>
+          {translate('projectTitle')}
+        </h1>
+        <a href="#contact"> {translate('buttonContact')}</a>
       </div>
       <div>
         <Swiper
@@ -79,10 +82,10 @@ const Projects = () => {
                     target="__blank"
                     href={project.urlProject}
                   >
-                    VIEW PROJECT
+                    {translate('viewProject').toUpperCase()}
                   </a>
                   <a target="__blank" href={project.urlGitHub}>
-                    VIEW CODE
+                    {translate('viewCode').toUpperCase()}
                   </a>
                 </div>
               </SwiperSlide>

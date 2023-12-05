@@ -3,10 +3,18 @@ import React from 'react';
 import styles from './NavBarMobile.module.scss';
 import { useLanguage } from '../../../hooks/useLanguage';
 import IconClose from '../../../SvgComponents/IconClose';
+import LanguageButton from '../LanguageButton';
 
-const NavBarMobile = () => {
-  const { currentLanguage, handleChangeLanguage, translate } = useLanguage();
+const NavBarMobile = ({
+  setOpenModalLanguage,
+  openModalLanguage,
+}: {
+  setOpenModalLanguage: React.Dispatch<React.SetStateAction<boolean>>;
+  openModalLanguage: boolean;
+}) => {
+  const { translate } = useLanguage();
   const dropwdownRef = React.useRef<HTMLDivElement>(null);
+
   const [openModal, setOpenModal] = React.useState<boolean>(false);
 
   const handleModal = () => {
@@ -25,6 +33,7 @@ const NavBarMobile = () => {
     },
     [openModal],
   );
+
   React.useEffect(() => {
     const handleClick = (e: Event) => {
       handleClickOutsideDropdown(e);
@@ -37,29 +46,26 @@ const NavBarMobile = () => {
     };
   }, [handleClickOutsideDropdown]);
 
-  const handleClickEscOutsideModal = React.useCallback(
-    (e: KeyboardEvent) => {
-      if (openModal && e.key === 'Escape') {
-        setOpenModal(false);
-      }
-    },
-    [openModal],
-  );
+  React.useEffect(() => {
+    if (openModalLanguage) {
+      setOpenModal(false);
+    }
+  }, [openModalLanguage, setOpenModalLanguage]);
 
   React.useEffect(() => {
-    const handleClickEsc = (e: KeyboardEvent) => {
-      handleClickEscOutsideModal(e);
-    };
-
     if (openModal) {
-      document.addEventListener('keydown', handleClickEsc);
-    } else {
-      document.removeEventListener('keydown', handleClickEsc);
+      setOpenModalLanguage(false);
     }
-  }, [handleClickEscOutsideModal, openModal]);
+  }, [openModal, setOpenModalLanguage]);
+
+
 
   return (
     <div ref={dropwdownRef} className={styles.containerModal}>
+      <LanguageButton
+        openModalLanguage={openModalLanguage}
+        setOpenModalLanguage={setOpenModalLanguage}
+      />
       <div
         onClick={handleModal}
         style={{ display: openModal ? 'none' : 'flex' }}
@@ -93,26 +99,6 @@ const NavBarMobile = () => {
               <a onClick={handleModal} href="#contact">
                 {translate('navBarContact')}
               </a>
-            </li>
-            <li
-              id={styles.changeLanguage}
-              onClick={() => {
-                handleChangeLanguage(), handleModal();
-              }}
-            >
-              <a>{translate('changeLanguage')}</a>
-              {currentLanguage === 'pt' ? (
-                <div className={styles.languageContainer}>
-                  <img
-                    src="flag/UnitedStatesFlag.png"
-                    alt="Flag United States"
-                  />
-                </div>
-              ) : (
-                <div className={styles.languageContainer}>
-                  <img src="flag/BrazilianFlag.png" alt="Flag Brazilian" />
-                </div>
-              )}
             </li>
           </ul>
         </nav>

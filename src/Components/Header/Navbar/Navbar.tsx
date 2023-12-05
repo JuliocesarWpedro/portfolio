@@ -1,8 +1,16 @@
+import React from 'react';
 import styles from './Navbar.module.scss';
 import { useLanguage } from '../../../hooks/useLanguage';
+import LanguageButton from '../LanguageButton';
 
-const Navbar = () => {
-  const { currentLanguage, handleChangeLanguage, translate } = useLanguage();
+const Navbar = ({
+  setOpenModalLanguage,
+  openModalLanguage,
+}: {
+  setOpenModalLanguage: React.Dispatch<React.SetStateAction<boolean>>;
+  openModalLanguage: boolean;
+}) => {
+  const { translate } = useLanguage();
 
   return (
     <nav className={styles.navBar}>
@@ -16,22 +24,10 @@ const Navbar = () => {
         <li>
           <a href="#contact">{translate('navBarContact')}</a>
         </li>
-        <li id={styles.changeLanguage} onClick={handleChangeLanguage}>
-          <button>{translate('changeLanguage')}</button>
-          {currentLanguage == 'pt' ? (
-            <div className={styles.languageContainer}>
-              <img src="flag/UnitedStatesFlag.png" alt="Flag United States" />
-            </div>
-          ) : (
-            <div className={styles.languageContainer}>
-              <img
-                src="flag/BrazilianFlag.png
-            "
-                alt="Flag Brazilian"
-              />
-            </div>
-          )}
-        </li>
+        <LanguageButton
+          openModalLanguage={openModalLanguage}
+          setOpenModalLanguage={setOpenModalLanguage}
+        />
       </ul>
     </nav>
   );

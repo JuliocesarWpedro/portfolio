@@ -6,6 +6,21 @@
     "navBarContact": "Contact",
     "changeLanguage": "Change Language",
     "titleNameAbout": "I'm ",
-    "subTitleAbout": "I'm Developer Web"
+    "subTitleAbout": "I'm Developer Web",
+    "projectTitle": "Projects",
+    "buttonContact": "Contact-me",
+    "viewProject": "view Project",
+    "viewCode": "view Code",
+    "contactTitle": "Contact",
+    "contactDescription": "I would love to hear about your project and how I could help. Please fill in the form, and I’ll get back to you as soon as possible.",
+    "contactInputName": "Name",
+    "contactInputSubject": "Subject",
+    "contactInputMessage": "Message",
+    "contactButtonSubmit": "Send Message",
+    "language-en": "English",
+    "language-pt": "Portuguese",
+    "errorNameInput": "Sorry, name is required",
+    "errorSubjectInput": "Please enter the subject",
+    "errorMessageInput": "Sorry, message is required"
   }
 }

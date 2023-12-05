@@ -71,6 +71,10 @@
 .titleProjectContainer {
   @include text-l;
   font-size: 57px;
+
+  &:hover {
+    color: $color-primary;
+  }
 }
 
 .swiperSlide {

@@ -6,6 +6,21 @@
     "navBarContact": "Contato",
     "changeLanguage": "Trocar idioma",
     "titleNameAbout": " Eu sou o ",
-    "subTitleAbout": "Desenvolvedor Web"
+    "subTitleAbout": "Desenvolvedor Web",
+    "projectTitle": "Projetos",
+    "buttonContact": "Entre em contato",
+    "viewProject": "Vizualizar Projeto",
+    "viewCode": "Vizualizar Código",
+    "contactTitle": "Contato",
+    "contactDescription": "Eu adoraria ouvir sobre seu projeto e como posso ajudar. Preencha o formulário e entrarei em contato com você o mais breve possível.",
+    "contactInputName": "Nome",
+    "contactInputSubject": "Assunto",
+    "contactInputMessage": "Mensagem",
+    "contactButtonSubmit": "Enviar Mensagem",
+    "language-en": "Inglês",
+    "language-pt": "Português",
+    "errorNameInput": "Desculpe, o nome é obrigatório.",
+    "errorSubjectInput": "Por favor insira o assunto.",
+    "errorMessageInput": "Desculpe, a mensagem é obrigatória."
   }
 }

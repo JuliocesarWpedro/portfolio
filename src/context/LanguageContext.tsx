@@ -2,9 +2,9 @@ import React, { ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 
 type LanguageContextType = {
-  handleChangeLanguage: () => void;
+  handleChangeLanguage: (language: string) => void;
   translate: (key: string) => string;
-  currentLanguage: string; 
+  currentLanguage: string;
 };
 
 export const LanguageContext = React.createContext<
@@ -24,10 +24,11 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({
   } = useTranslation();
   const [currentLanguage, setCurrentLanguage] = React.useState(language);
 
-  const handleChangeLanguage = () => {
-    const newLanguage = currentLanguage === 'en' ? 'pt' : 'en';
-    setCurrentLanguage(newLanguage);
-    changeLanguage(newLanguage);
+  const handleChangeLanguage = (newLanguage: string) => {
+    if (newLanguage !== currentLanguage) {
+      setCurrentLanguage(newLanguage);
+      changeLanguage(newLanguage);
+    }
   };
 
   const translate = (key: string) => {

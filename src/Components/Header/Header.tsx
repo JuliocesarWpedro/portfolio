@@ -7,6 +7,8 @@ import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
 const Header = () => {
   const { scrollY } = useScroll();
   const [hidden, setHidden] = React.useState<boolean>(false);
+  const [openModalLanguage, setOpenModalLanguage] =
+    React.useState<boolean>(false);
 
   useMotionValueEvent(scrollY, 'change', (latest) => {
     const previous = scrollY.getPrevious();
@@ -21,7 +23,7 @@ const Header = () => {
     <motion.header
       variants={{
         visible: { y: 0 },
-        hidden: { y: '-250%' },
+        hidden: { y: '-350%' },
       }}
       animate={hidden ? 'hidden' : 'visible'}
       transition={{ duration: 0.4, ease: 'easeInOut' }}
@@ -30,8 +32,14 @@ const Header = () => {
       <h2>
         <a href="/">Julio Cesar</a>
       </h2>
-      <Navbar />
-      <NavBarMobile />
+      <Navbar
+        openModalLanguage={openModalLanguage}
+        setOpenModalLanguage={setOpenModalLanguage}
+      />
+      <NavBarMobile
+        openModalLanguage={openModalLanguage}
+        setOpenModalLanguage={setOpenModalLanguage}
+      />
     </motion.header>
   );
 };

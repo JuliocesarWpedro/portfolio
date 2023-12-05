@@ -3,7 +3,9 @@ import styles from './Contact.module.scss';
 import { SubmitHandler, FieldValues, useForm } from 'react-hook-form';
 import { AiOutlineExclamationCircle } from 'react-icons/ai';
 import ElementDetail from '../../SvgComponents/ElementDetail';
+import { useLanguage } from '../../hooks/useLanguage';
 const Contact = () => {
+  const { translate } = useLanguage();
   const {
     register,
     handleSubmit,
@@ -25,11 +27,8 @@ const Contact = () => {
     <div id="contact" className={styles.contactContainer}>
       <ElementDetail />
       <div className={styles.contactText}>
-        <h2>Contact</h2>
-        <p>
-          I would love to hear about your project and how I could help. Please
-          fill in the form, and I’ll get back to you as soon as possible.
-        </p>
+        <h2> {translate('contactTitle')}</h2>
+        <p>{translate('contactDescription')}</p>
       </div>
       <form
         onSubmit={handleSubmit(onSubmit)}
@@ -45,12 +44,12 @@ const Contact = () => {
                 : '1px solid #fff',
             }}
             type="text"
-            placeholder="NAME"
+            placeholder={translate('contactInputName').toUpperCase()}
             {...register('Name', { required: true })}
           />
-          {errors.Name && <span>Sorry, name is required</span> && (
+          {errors.Name && (
             <div className={styles.errorContainer}>
-              <span>Sorry, name is required</span>
+              <span>{translate('errorNameInput')}</span>
               <AiOutlineExclamationCircle
                 className={styles.iconExclamationName}
               />
@@ -66,15 +65,15 @@ const Contact = () => {
                 : '1px solid #fff',
             }}
             type="text"
-            placeholder="SUBJECT"
+            placeholder={translate('contactInputSubject').toUpperCase()}
             {...register('Subject', {
-              required: 'Please enter the subject',
+              required: true,
               shouldUnregister: true,
             })}
           />
           {errors.Subject && (
             <div className={styles.errorContainer}>
-              <span>{String(errors.Subject.message)}</span>
+              <span>{translate('errorSubjectInput')}</span>
               <AiOutlineExclamationCircle
                 className={styles.iconExclamationEmail}
               />
@@ -89,13 +88,13 @@ const Contact = () => {
                 ? '1px solid #ff6f5b'
                 : '1px solid #fff',
             }}
-            placeholder="MESSAGE"
+            placeholder={translate('contactInputMessage').toUpperCase()}
             rows={5}
             {...register('Message', { required: true })}
           ></textarea>
           {errors.Message && (
             <div className={styles.errorContainer}>
-              <span>Sorry, message is required</span>
+              <span>{translate('errorMessageInput')}</span>
               <AiOutlineExclamationCircle
                 className={styles.iconExclamationMessage}
               />
@@ -103,7 +102,7 @@ const Contact = () => {
           )}
         </div>
 
-        <button type="submit">Send Message</button>
+        <button type="submit">{translate('contactButtonSubmit')}</button>
       </form>
     </div>
   );
