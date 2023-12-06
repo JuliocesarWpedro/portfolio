@@ -3,15 +3,7 @@ import styles from './CardProject.module.scss';
 import { FaGithub } from 'react-icons/fa';
 import { CgWebsite } from 'react-icons/cg';
 import { FaExternalLinkAlt } from 'react-icons/fa';
-
-interface Project {
-  srcImage: string;
-  altImage: string;
-  urlGitHub: string;
-  urlProject: string;
-  title: string;
-  description: string;
-}
+import { Project } from './project';
 
 interface CardProjectProps {
   project: Project;

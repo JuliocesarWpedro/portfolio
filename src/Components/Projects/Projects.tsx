@@ -6,46 +6,13 @@ import 'swiper/css/navigation';
 import { useLanguage } from '../../hooks/useLanguage';
 import CardProject from './CardProject';
 import ProjectCardInProgress from './ProjectCardInProgress';
-
-interface Project {
-  srcImage: string;
-  altImage: string;
-  urlGitHub: string;
-  urlProject: string;
-  title: string;
-  description: string;
-}
-
-const projects: Project[] = [
-  {
-    srcImage: '/AnimaisFantásticos.png',
-    description: 'Projeto feito com Javascript',
-    title: 'Animais Fantásticos',
-    altImage: 'Projeto AnimaisFantásticos',
-    urlGitHub: 'https://github.com/JuliocesarWpedro/animais-fantasticos',
-    urlProject:
-      'https://animais-fantasticos-git-master-julio-cesar-w-pedros-projects.vercel.app/',
-  },
-  {
-    srcImage: '/Pokedex.png',
-    title: 'Pokedex',
-    description: 'Projeto realizado com Html, Css, React, Typescript',
-    altImage: 'Projeto Pokedex',
-    urlGitHub: 'https://github.com/JuliocesarWpedro/pokedexNext',
-    urlProject: 'https://pokedex-next-julio.vercel.app/',
-  },
-  {
-    srcImage: '/Pokedex.png',
-    title: 'Pokedex',
-    description: 'Projeto feito com React e Next',
-    altImage: 'Projeto Pokedex',
-    urlGitHub: 'https://github.com/JuliocesarWpedro/pokedexNext',
-    urlProject: 'https://pokedex-next-julio.vercel.app/',
-  },
-];
+import { projects } from './project';
 
 const Projects = () => {
   const { translate } = useLanguage();
+  const [currentActiveFilter, setCurrentActiveFilter] =
+    React.useState<string>('all');
+
   return (
     <div id="projects" className={styles.projectsContainer}>
       <div className={styles.identificationContainer}>
@@ -56,17 +23,75 @@ const Projects = () => {
       </div>
       <div className={styles.listProjects}>
         <div className={styles.leftContainer}>
-          <button className={styles.active}>All Projects</button>
-          <button>Javascript</button>
-          <button>Typescript</button>
-          <button>React</button>
-          <button>Node</button>
-          <button>Scss</button>
+          <button
+            onClick={() => {
+              if (currentActiveFilter !== 'all') {
+                setCurrentActiveFilter('all');
+              }
+            }}
+            className={currentActiveFilter === 'all' ? styles.active : ''}
+          >
+            All Projects
+          </button>
+          <button
+            onClick={() => {
+              if (currentActiveFilter !== 'javascript') {
+                setCurrentActiveFilter('javascript');
+              }
+            }}
+            className={
+              currentActiveFilter === 'javascript' ? styles.active : ''
+            }
+          >
+            Javascript
+          </button>
+          <button
+            onClick={() => {
+              if (currentActiveFilter !== 'typescript') {
+                setCurrentActiveFilter('typescript');
+              }
+            }}
+            className={
+              currentActiveFilter === 'typescript' ? styles.active : ''
+            }
+          >
+            Typescript
+          </button>
+          <button
+            onClick={() => {
+              if (currentActiveFilter !== 'react') {
+                setCurrentActiveFilter('react');
+              }
+            }}
+            className={currentActiveFilter === 'react' ? styles.active : ''}
+          >
+            React
+          </button>
+          <button
+            onClick={() => {
+              if (currentActiveFilter !== 'node') {
+                setCurrentActiveFilter('node');
+              }
+            }}
+            className={currentActiveFilter === 'node' ? styles.active : ''}
+          >
+            Node
+          </button>
         </div>
         <div className={styles.rightContainer}>
-          {projects.map((project, index) => {
-            return <CardProject key={index} project={project}></CardProject>;
-          })}
+          {currentActiveFilter === 'all'
+            ? projects.map((project, index) => (
+                <CardProject key={index} project={project}></CardProject>
+              ))
+            : projects
+                .filter(
+                  (project) =>
+                    project.mainCategory.toLowerCase() ===
+                    currentActiveFilter.toLowerCase(),
+                )
+                .map((project, index) => (
+                  <CardProject key={index} project={project}></CardProject>
+                ))}
           <ProjectCardInProgress />
         </div>
       </div>
