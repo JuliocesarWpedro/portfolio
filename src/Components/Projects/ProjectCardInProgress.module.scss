@@ -1,0 +1,140 @@
+  @import '../../styles/variables';
+
+  .cardProject {
+    height: 423px;
+    padding: 20px 16px 0 16px;
+    background-color: $color-bg2;
+    border-radius: 5px;
+    border: 1px solid lighten($color-bg2, 10%);
+    transition: color 0.3s ease;
+    width: 350px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    @media(max-width:1150px) {
+      width: 300px;
+    }
+
+    @media(max-width:700px) {
+      padding: 30px 16px 0 16px;
+      width: 260px;
+      height: 400px;
+    }
+
+    @media(max-width:610px) {
+      width: 350px;
+      height: 450px;
+    }
+
+    @media(max-width:400px) {
+      width: 300px;
+    }
+
+    @media(max-width:350px) {
+      width: 280px;
+      height: 400px;
+    }
+
+    .loadingElement {
+      animation: isRotating 1.6s infinite;
+      width: 135px;
+      height: 135px;
+      border: 18px solid $color-bg1;
+      border-top-color: $color-primary;
+      border-radius: 50%;
+    }
+
+
+
+    @keyframes isRotating {
+      to {
+        transform: rotate(1turn);
+      }
+    }
+
+    img {
+      border-radius: 5px;
+    }
+
+    &:hover {
+      transform: rotate(1deg);
+      scale: 1.01;
+      border: 1px solid $color-primary;
+      background-color: lighten($color-bg2, 5%);
+    }
+  }
+
+  .boxLinks {
+    a:hover {
+      stroke: $color-primary;
+      fill: $color-primary;
+
+      svg {
+        path {
+          color: $color-primary;
+        }
+
+        stroke: $color-primary;
+        fill: $color-primary;
+      }
+    }
+
+    svg {
+      height: 25px;
+      width: 25px;
+      transition: color 0.3 ease;
+    }
+
+    display: flex;
+    gap: 15px;
+  }
+
+  .cardProjectBoxTexts {
+    padding: 20px 5px;
+    display: flex;
+    flex-direction: column;
+
+    @media(max-width:610px) {
+      padding: 0 5px;
+      margin-top: 30px;
+    }
+
+    .titleBox {
+      @include text-m;
+    }
+
+    .descriptionBox {
+      @include text-body;
+      font-weight: 200;
+      font-size: 13px;
+      color: darken(#fff, 20%);
+    }
+  }
+
+  .cardBottomBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 115px;
+
+    @media(max-width:1150px) {
+      margin-top: 77px;
+    }
+
+    @media(max-width:700px) {
+      margin-top: 50px;
+    }
+
+    @media(max-width:610px) {
+      margin-top: 77px;
+    }
+
+    @media(max-width:400px) {
+      margin-top: 45px;
+    }
+
+    @media(max-width:350px) {
+      margin-top: 0;
+    }
+  }

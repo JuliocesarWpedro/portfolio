@@ -1,24 +1,26 @@
 import React from 'react';
 import styles from './Projects.module.scss';
-import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import { MdOutlineArrowLeft } from 'react-icons/md';
-import { MdOutlineArrowRight } from 'react-icons/md';
-import { Pagination, Navigation } from 'swiper/modules';
 import { useLanguage } from '../../hooks/useLanguage';
+import CardProject from './CardProject';
+import ProjectCardInProgress from './ProjectCardInProgress';
 
 interface Project {
   srcImage: string;
   altImage: string;
   urlGitHub: string;
   urlProject: string;
+  title: string;
+  description: string;
 }
 
 const projects: Project[] = [
   {
     srcImage: '/AnimaisFantásticos.png',
+    description: 'Projeto feito com Javascript',
+    title: 'Animais Fantásticos',
     altImage: 'Projeto AnimaisFantásticos',
     urlGitHub: 'https://github.com/JuliocesarWpedro/animais-fantasticos',
     urlProject:
@@ -26,18 +28,16 @@ const projects: Project[] = [
   },
   {
     srcImage: '/Pokedex.png',
+    title: 'Pokedex',
+    description: 'Projeto realizado com Html, Css, React, Typescript',
     altImage: 'Projeto Pokedex',
     urlGitHub: 'https://github.com/JuliocesarWpedro/pokedexNext',
     urlProject: 'https://pokedex-next-julio.vercel.app/',
   },
   {
     srcImage: '/Pokedex.png',
-    altImage: 'Projeto Pokedex',
-    urlGitHub: 'https://github.com/JuliocesarWpedro/pokedexNext',
-    urlProject: 'https://pokedex-next-julio.vercel.app/',
-  },
-  {
-    srcImage: '/Pokedex.png',
+    title: 'Pokedex',
+    description: 'Projeto feito com React e Next',
     altImage: 'Projeto Pokedex',
     urlGitHub: 'https://github.com/JuliocesarWpedro/pokedexNext',
     urlProject: 'https://pokedex-next-julio.vercel.app/',
@@ -54,52 +54,20 @@ const Projects = () => {
         </h1>
         <a href="#contact"> {translate('buttonContact')}</a>
       </div>
-      <div>
-        <Swiper
-          slidesPerView={'auto'}
-          spaceBetween={30}
-          scrollbar={{
-            hide: true,
-          }}
-          loop={true}
-          grabCursor={true}
-          centeredSlides={true}
-          pagination={{ el: '.swiper-pagination', clickable: true }}
-          navigation={{
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-          }}
-          modules={[Pagination, Navigation]}
-          className="mySwiper"
-        >
+      <div className={styles.listProjects}>
+        <div className={styles.leftContainer}>
+          <button className={styles.active}>All Projects</button>
+          <button>Javascript</button>
+          <button>Typescript</button>
+          <button>React</button>
+          <button>Node</button>
+          <button>Scss</button>
+        </div>
+        <div className={styles.rightContainer}>
           {projects.map((project, index) => {
-            return (
-              <SwiperSlide key={index} className={styles.swiperSlideCard}>
-                <img src={project.srcImage} alt={project.altImage} />
-                <div className={styles.projectsSlideLinks}>
-                  <a
-                    rel="noreferrer noopener"
-                    target="__blank"
-                    href={project.urlProject}
-                  >
-                    {translate('viewProject').toUpperCase()}
-                  </a>
-                  <a target="__blank" href={project.urlGitHub}>
-                    {translate('viewCode').toUpperCase()}
-                  </a>
-                </div>
-              </SwiperSlide>
-            );
+            return <CardProject key={index} project={project}></CardProject>;
           })}
-        </Swiper>
-        <div className="slider-controler">
-          <div className="swiper-button-prev slider-arrow">
-            <MdOutlineArrowLeft />
-          </div>
-          <div className="swiper-button-next slider-arrow">
-            <MdOutlineArrowRight />
-          </div>
-          <div className="swiper-pagination"></div>
+          <ProjectCardInProgress />
         </div>
       </div>
     </div>

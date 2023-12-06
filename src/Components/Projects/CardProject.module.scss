@@ -1,0 +1,126 @@
+  @import '../../styles/variables';
+
+  .cardProject {
+    height: 423px;
+    padding: 16px 16px 0 16px;
+    background-color: $color-bg2;
+    border-radius: 5px;
+    border: 1px solid lighten($color-bg2, 10%);
+    transition: color 0.3s ease;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+
+    @media(max-width:1150px) {
+      width: 300px;
+    }
+
+    @media(max-width:700px) {
+      width: 260px;
+      height: 400px;
+    }
+
+    @media(max-width:610px) {
+      width: 350px;
+      height: 450px;
+    }
+
+    @media(max-width:400px) {
+      width: 300px;
+      height: 420px;
+    }
+
+    @media(max-width:350px) {
+      width: 280px;
+      height: 400px;
+    }
+
+
+    img {
+      border-radius: 5px;
+    }
+
+    &:hover {
+      transform: rotate(1deg);
+      scale: 1.01;
+      border: 1px solid $color-primary;
+      background-color: lighten($color-bg2, 5%);
+    }
+  }
+
+  .boxLinks {
+    a:hover {
+      stroke: $color-primary;
+      fill: $color-primary;
+
+      svg {
+        path {
+          color: $color-primary;
+        }
+
+        stroke: $color-primary;
+        fill: $color-primary;
+      }
+    }
+
+    svg {
+      height: 25px;
+      width: 25px;
+      transition: color 0.3 ease;
+    }
+
+    display: flex;
+    gap: 15px;
+  }
+
+  .moreInfos {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 5px;
+
+    &:hover {
+      scale: 1.10;
+
+      p {
+
+        color: $color-primary;
+      }
+
+      svg {
+        fill: $color-primary;
+      }
+    }
+  }
+
+  .cardProjectBoxTexts {
+    padding: 20px 5px 0;
+    display: flex;
+    flex-direction: column;
+
+
+    .titleBox {
+      @include text-m;
+    }
+
+    .descriptionBox {
+      height: 121px;
+      @include text-body;
+      font-weight: 200;
+      font-size: 13px;
+      color: darken(#fff, 20%);
+    }
+  }
+
+  .cardBottomBox {
+    margin-top: -7px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media(max-width:1150px) {
+      margin-top: 15px;
+    }
+  }
