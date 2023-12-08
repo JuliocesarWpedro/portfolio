@@ -6,10 +6,10 @@ import { IoLogoJavascript } from 'react-icons/io5';
 import { BiLogoTypescript } from 'react-icons/bi';
 import { SiNextdotjs } from 'react-icons/si';
 import { GrGraphQl } from 'react-icons/gr';
-import { BsFiletypeScss } from 'react-icons/bs';
 import { FaNode } from 'react-icons/fa';
 import { FaGithub } from 'react-icons/fa';
 import { FaLinkedin } from 'react-icons/fa';
+import SaasIcon from '../../SvgComponents/Sass';
 
 const About = () => {
   const { translate } = useLanguage();
@@ -52,9 +52,9 @@ const About = () => {
           <FaReact />
           <IoLogoJavascript />
           <BiLogoTypescript />
+          <SaasIcon />
           <SiNextdotjs />
           <GrGraphQl />
-          <BsFiletypeScss />
           <FaNode />
         </div>
       </motion.div>

@@ -1,0 +1,184 @@
+@import '../../styles/variables';
+
+.ProjectContainer {
+  padding: 130px 80px 0 80px;
+  background-color: $color-bg1;
+  height: 1500px;
+
+  @media (max-width: 900px) {
+    padding: 130px 80px 0 80px;
+  }
+
+  @media (max-width: 850px) {
+    padding: 130px 35px 0 35px;
+  }
+
+  @media (max-width: 500px) {
+    padding: 130px 20px 0 20px;
+  }
+}
+
+
+.ContainerProject {
+  padding-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media(max-width:1050px) {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media(max-width:550px) {
+    gap: 30px;
+  }
+
+  a {
+    border: none;
+    display: flex;
+    align-items: center;
+    @include text-body;
+    justify-content: center;
+    gap: 10px;
+    position: relative;
+    color: #fff;
+    border-radius: 1px;
+    outline: none;
+    height: 50px;
+    width: 200px;
+    cursor: pointer;
+    background-color: $color-primary;
+
+    svg {
+      width: 25px;
+      height: 25px;
+    }
+
+    &:hover {
+      transition: background-color 0.3s ease;
+      background-color: darken($color-primary, 20%);
+      color: white;
+      font-weight: bold;
+      border: 1px solid $color-primary;
+
+      svg {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+
+  h1 {
+    @include text-l;
+    font-size: 70px;
+    max-width: 11ch;
+
+    @media(max-width:1050px) {
+      text-align: center;
+    }
+
+    @media(max-width:550px) {
+      font-size: 60px;
+    }
+
+    @media(max-width:400px) {
+      font-size: 50px;
+    }
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}
+
+.otherCategories {
+  padding-top: 30px;
+  @include text-body;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  align-items: center;
+  flex-wrap: wrap;
+
+  @media(max-width: 450px) {
+    gap: 20px;
+  }
+
+  @media(max-width: 380px) {
+    gap: 10px;
+  }
+
+  span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 180px;
+    @include text-body;
+    text-align: center;
+    background-color: $color-bg2;
+    border-radius: 5px;
+    padding: 15px 5px;
+    border: 1px solid $color-primary;
+    text-transform: capitalize;
+    gap: 20px;
+
+    p {
+      @include text-body;
+    }
+
+    svg {
+      width: 25px;
+      height: 25px;
+      color: $color-secondary;
+      fill: $color-secondary;
+
+      path {
+        color: $color-secondary;
+        fill: $color-secondary;
+      }
+    }
+
+
+    @media(max-width: 450px) {
+      width: 160px;
+      justify-content: space-between;
+      gap: 0;
+      padding: 15px 10px;
+    }
+
+    @media(max-width: 380px) {
+      width: 140px;
+      padding: 15px 5px;
+    }
+
+    @media(max-width: 330px) {
+      width: 130px;
+
+      p {
+        font-size: 16px;
+      }
+    }
+
+    &:hover {
+      background-color: lighten($color-bg2, 5%);
+      font-weight: bold;
+
+      p {
+        color: $color-primary;
+      }
+
+      svg {
+        color: $color-primary;
+        fill: $color-primary;
+
+        path {
+          color: $color-primary;
+          fill: $color-primary;
+        }
+      }
+    }
+  }
+}

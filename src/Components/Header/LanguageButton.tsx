@@ -48,10 +48,6 @@ const LanguageButton = ({
     setOpenModalLanguage((value) => !value);
   }
 
-  React.useEffect(() => {
-    console.log(openModalLanguage);
-  }, [openModalLanguage]);
-
   return (
     <div className={styles.LanguageContainer} ref={dropDownLanguage}>
       <div

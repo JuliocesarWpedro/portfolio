@@ -16,13 +16,13 @@ const Navbar = ({
     <nav className={styles.navBar}>
       <ul>
         <li>
-          <a href="#about">{translate('navBarAbout')}</a>
+          <a href="/#about">{translate('navBarAbout')}</a>
         </li>
         <li>
-          <a href="#projects">{translate('navBarProjects')}</a>
+          <a href="/#projects">{translate('navBarProjects')}</a>
         </li>
         <li>
-          <a href="#contact">{translate('navBarContact')}</a>
+          <a href="/#contact">{translate('navBarContact')}</a>
         </li>
         <LanguageButton
           openModalLanguage={openModalLanguage}

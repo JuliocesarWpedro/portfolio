@@ -5,7 +5,7 @@ import { AiOutlineExclamationCircle } from 'react-icons/ai';
 import ElementDetail from '../../SvgComponents/ElementDetail';
 import { useLanguage } from '../../hooks/useLanguage';
 const Contact = () => {
-  const { translate } = useLanguage();
+  const { translate, currentLanguage } = useLanguage();
   const {
     register,
     handleSubmit,
@@ -13,10 +13,17 @@ const Contact = () => {
     reset,
   } = useForm();
 
+  function capitalize(str: string): string {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  }
+
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     const destinatario = 'juliowanke@gmail.com';
     const assunto = data.Subject;
-    const corpo = data.Message;
+    const corpo =
+      currentLanguage === 'pt'
+        ? `Olá meu nome é ${capitalize(data.Name)}, ${data.Message}`
+        : `Hello, my name is ${capitalize(data.Name)}, ${data.Message}`;
     const gmailLink = `https://mail.google.com/mail/?view=cm&to=${destinatario}&su=${encodeURIComponent(
       assunto,
     )}&body=${encodeURIComponent(corpo)}`;
@@ -60,7 +67,7 @@ const Contact = () => {
           <input
             className={styles.inputEmail}
             style={{
-              borderBottom: errors.Email
+              borderBottom: errors.Subject
                 ? '1px solid #ff6f5b'
                 : '1px solid #fff',
             }}
