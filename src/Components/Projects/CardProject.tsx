@@ -4,12 +4,21 @@ import { FaGithub } from 'react-icons/fa';
 import { CgWebsite } from 'react-icons/cg';
 import { FaExternalLinkAlt } from 'react-icons/fa';
 import { Project } from './project';
+import { useNavigate } from 'react-router-dom';
 
 interface CardProjectProps {
   project: Project;
 }
 
 const CardProject: React.FC<CardProjectProps> = ({ project }) => {
+  const navigate = useNavigate();
+  function formatRoute(title: string): string {
+    return title.trim().toLowerCase().replace(/\s+/g, '-');
+  }
+  const handleLinkClick = () => {
+    navigate(`/project/:${formatRoute(project.title)}`);
+  };
+
   return (
     <article className={styles.cardProject}>
       <img src={project.srcImage} alt={project.altImage} />
@@ -25,10 +34,10 @@ const CardProject: React.FC<CardProjectProps> = ({ project }) => {
               <FaGithub />
             </a>
           </div>
-          <a target="__blank" className={styles.moreInfos}>
+          <button onClick={handleLinkClick} className={styles.moreInfos}>
             <p>More</p>
             <FaExternalLinkAlt />
-          </a>
+          </button>
         </div>
       </div>
     </article>

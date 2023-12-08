@@ -38,8 +38,8 @@
 
     .loadingElement {
       animation: isRotating 1.6s infinite;
-      width: 135px;
-      height: 135px;
+      width: 131px;
+      height: 131px;
       border: 18px solid $color-bg1;
       border-top-color: $color-primary;
       border-radius: 50%;
@@ -58,7 +58,6 @@
     }
 
     &:hover {
-      transform: rotate(1deg);
       scale: 1.01;
       border: 1px solid $color-primary;
       background-color: lighten($color-bg2, 5%);
@@ -119,7 +118,7 @@
     margin-top: 115px;
 
     @media(max-width:1150px) {
-      margin-top: 77px;
+      margin-top: 80px;
     }
 
     @media(max-width:700px) {
@@ -127,14 +126,14 @@
     }
 
     @media(max-width:610px) {
-      margin-top: 77px;
+      margin-top: 128px;
     }
 
     @media(max-width:400px) {
-      margin-top: 45px;
+      margin-top: 97px;
     }
 
     @media(max-width:350px) {
-      margin-top: 0;
+      margin-top: 50px;
     }
   }

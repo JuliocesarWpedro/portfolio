@@ -51,6 +51,7 @@
     }
 
     &:hover {
+      font-weight: bold;
       transition: background-color 0.3s ease;
       background-color: darken($color-primary, 20%);
       color: white;

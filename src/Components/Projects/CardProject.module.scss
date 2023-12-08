@@ -41,7 +41,6 @@
     }
 
     &:hover {
-      transform: rotate(1deg);
       scale: 1.01;
       border: 1px solid $color-primary;
       background-color: lighten($color-bg2, 5%);
@@ -75,17 +74,21 @@
 
   .moreInfos {
     cursor: pointer;
+    @include text-body;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
     padding: 5px;
+    background-color: transparent;
+    border: none;
+    outline: none;
 
     &:hover {
       scale: 1.10;
 
       p {
-
+        font-weight: bold;
         color: $color-primary;
       }
 

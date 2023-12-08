@@ -1,8 +1,7 @@
 .particlesContainer {
   position: absolute;
   width: calc(100vw - 17px);
-
-  height: calc(100% - 153.5px - 352px);
+  height: calc(100% - 153.5px);
   transform: translateZ(0);
   z-index: 0;
 }
