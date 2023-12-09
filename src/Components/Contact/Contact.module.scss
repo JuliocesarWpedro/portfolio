@@ -8,19 +8,30 @@
   background-color: $color-bg2;
   margin-top: 100px;
   position: relative;
-  padding: 60px 80px 80px;
+  padding: 60px 80px 0px 80px;
   z-index: 1;
 
+
+  >svg {
+    display: none;
+  }
+
+  @media (max-width: 1050px) {
+    >svg {
+      display: block;
+    }
+  }
+
   @media (max-width: 900px) {
-    padding: 60px 80px 30px 80px;
+    padding: 60px 80px 30px 0px 80px;
   }
 
   @media (max-width: 850px) {
-    padding: 60px 35px 30px 35px;
+    padding: 60px 35px 30px 0px 35px;
   }
 
   @media (max-width: 500px) {
-    padding: 60px 20px 30px 20px;
+    padding: 60px 20px 30px 0px 20px;
   }
 }
 
@@ -38,10 +49,19 @@
 }
 
 .contactText {
-
   display: flex;
   flex-direction: column;
-  gap: 35px;
+
+  @media(max-width: 1050px) {
+    div {
+      display: none;
+    }
+  }
+
+  svg {
+    width: 300px !important;
+    height: 300px !important;
+  }
 
   h2 {
     @include text-l;
@@ -54,6 +74,7 @@
   }
 
   p {
+    margin-top: 35px;
     @include text-body;
     max-width: 450px;
   }

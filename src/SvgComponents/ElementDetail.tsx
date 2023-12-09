@@ -2,7 +2,11 @@ import React from 'react';
 function ElementDetail() {
   return (
     <svg
-    style={{position: 'absolute', left: '0', top: '70%'}}
+      style={{
+        position: 'absolute',
+        left: '0',
+        top: '70%',
+      }}
       xmlns="http://www.w3.org/2000/svg"
       width="187"
       height="129"

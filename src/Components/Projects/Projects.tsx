@@ -1,8 +1,5 @@
 import React from 'react';
 import styles from './Projects.module.scss';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
 import { useLanguage } from '../../hooks/useLanguage';
 import CardProject from './CardProject';
 import ProjectCardInProgress from './ProjectCardInProgress';
