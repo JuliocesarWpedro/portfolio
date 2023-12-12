@@ -3,7 +3,7 @@
 .ProjectContainer {
   padding: 130px 80px 0 80px;
   background-color: $color-bg1;
-  height: 1500px;
+  height: 100%;
 
   @media (max-width: 900px) {
     padding: 130px 80px 0 80px;
@@ -95,7 +95,8 @@
 }
 
 .otherCategories {
-  padding-top: 30px;
+  padding-top: 50px;
+  padding-bottom: 50px;
   @include text-body;
   display: flex;
   justify-content: center;
@@ -179,6 +180,57 @@
           fill: $color-primary;
         }
       }
+    }
+  }
+}
+
+.projectUrls {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 40px;
+
+  @media(max-width:530px) {
+    flex-direction: column;
+  }
+
+  a {
+    @include text-body;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 200px;
+    gap: 10px;
+    color: #fff;
+    padding: 0 10px;
+    border-radius: 1px;
+    background-color: $color-primary;
+
+    &:hover {
+      p {
+        font-weight: bold;
+      }
+
+      transition: background-color 0.3s ease;
+      background-color: darken($color-primary, 20%);
+      color: white;
+      border: 1px solid $color-primary;
+
+      svg {
+        width: 25px;
+        height: 25px;
+      }
+    }
+
+    p {
+      @include text-body;
+    }
+
+    svg {
+      width: 20px;
+      height: 20px;
     }
   }
 }

@@ -21,7 +21,9 @@ const CardProject: React.FC<CardProjectProps> = ({ project }) => {
 
   return (
     <article className={styles.cardProject}>
-      <img src={project.srcImage} alt={project.altImage} />
+      <a href={project.urlProject} target="__blank">
+        <img src={project.srcImage} alt={project.altImage} />
+      </a>
       <div className={styles.cardProjectBoxTexts}>
         <h3 className={styles.titleBox}>{project.title}</h3>
         <p className={styles.descriptionBox}>{project.description}</p>

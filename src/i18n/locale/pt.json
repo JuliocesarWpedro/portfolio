@@ -21,6 +21,7 @@
     "language-pt": "Português",
     "errorNameInput": "Desculpe, o nome é obrigatório.",
     "errorSubjectInput": "Por favor insira o assunto.",
-    "errorMessageInput": "Desculpe, a mensagem é obrigatória."
+    "errorMessageInput": "Desculpe, a mensagem é obrigatória.",
+    "allprojectsFilter": "Todos os Projetos"
   }
 }

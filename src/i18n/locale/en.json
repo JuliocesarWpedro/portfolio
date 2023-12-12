@@ -21,6 +21,7 @@
     "language-pt": "Portuguese",
     "errorNameInput": "Sorry, name is required",
     "errorSubjectInput": "Please enter the subject",
-    "errorMessageInput": "Sorry, message is required"
+    "errorMessageInput": "Sorry, message is required",
+    "allprojectsFilter": "All Projects"
   }
 }

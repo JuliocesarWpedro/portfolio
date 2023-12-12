@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
+import HeaderIndividualProjects from '../Header/HeaderIndividualProjects';
 import ParticlesContainer from '../ParticlesContainer/ParticlesContainer';
 import styles from './IndividualProject.module.scss';
 import { useParams } from 'react-router-dom';
@@ -15,6 +15,8 @@ import { FaNode } from 'react-icons/fa';
 import SaasIcon from '../../SvgComponents/Sass';
 import { FaCss3Alt } from 'react-icons/fa';
 import { FaHtml5 } from 'react-icons/fa';
+import { FaGithub } from 'react-icons/fa';
+import { CgWebsite } from 'react-icons/cg';
 
 const IndividualProject = () => {
   const { projectName } = useParams();
@@ -25,17 +27,23 @@ const IndividualProject = () => {
       project.title.replace(/\s+/g, '').toLowerCase() === projectname,
   );
 
-  React.useEffect(() => {
+  setTimeout(() => {
     window.scrollTo(0, 0);
-  }, []);
+  }, 100);
 
   return (
     <>
       <ParticlesContainer />
-      <Header />
+      <HeaderIndividualProjects />
       <div className={styles.ProjectContainer}>
         {filteredProjects.map((project: Project, index) => (
-          <div style={{ position: 'relative', zIndex: '1' }} key={index}>
+          <div
+            style={{
+              position: 'relative',
+              zIndex: '1',
+            }}
+            key={index}
+          >
             <div className={styles.ContainerProject}>
               <h1>{project.title}</h1>
               <a href="/#projects">
@@ -43,8 +51,16 @@ const IndividualProject = () => {
                 <PiKeyReturnFill />
               </a>
             </div>
-            <div>
-              <img src={project.srcImage} alt={project.altImage} />
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+              }}
+            >
+              <a href={project.urlProject} target="__blank">
+                <img src={project.srcImage} alt={project.altImage} />
+              </a>
               <div className={styles.otherCategories}>
                 {project.otherCategories?.map((category, index) => {
                   return (
@@ -106,6 +122,16 @@ const IndividualProject = () => {
                     </span>
                   );
                 })}
+              </div>
+              <div className={styles.projectUrls}>
+                <a target="__blank" href={project.urlProject}>
+                  <p>View Project</p>
+                  <CgWebsite />
+                </a>
+                <a target="__blank" href={project.urlGitHub}>
+                  <p>View Code</p>
+                  <FaGithub />
+                </a>
               </div>
             </div>
           </div>

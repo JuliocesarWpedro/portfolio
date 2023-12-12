@@ -28,7 +28,7 @@ const Projects = () => {
             }}
             className={currentActiveFilter === 'all' ? styles.active : ''}
           >
-            All Projects
+            {translate('allprojectsFilter')}
           </button>
           <button
             onClick={() => {

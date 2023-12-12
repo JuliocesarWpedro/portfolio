@@ -27,7 +27,7 @@
   flex-direction: column;
 
 
-  @media (max-width: 900px) {
+  @media (max-width: 1050px) {
     align-items: center;
     gap: 25px;
   }
@@ -73,7 +73,7 @@
   }
 
   p {
-    margin-top: 20px;
+    margin-top: 23px;
     @include text-body;
     font-size: 45px;
 
@@ -135,6 +135,8 @@
 
   @media(max-width:1050px) {
     padding-top: 0px;
+    align-items: center;
+    text-align: center;
   }
 
   @media(max-width:770px) {

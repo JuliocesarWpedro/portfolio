@@ -71,14 +71,14 @@ const About = () => {
         </motion.div>
         <div className={styles.linksSocialMedia}>
           <a target="__blank" href="https://github.com/JuliocesarWpedro">
-            <p>Go to GitHub</p>
+            <p>GitHub</p>
             <FaGithub />
           </a>
           <a
             target="__blank"
             href="https://www.linkedin.com/in/j%C3%BAlio-c%C3%A9sar-wanderosfky-977301297/"
           >
-            <p>Go to Linkedin</p>
+            <p>Linkedin</p>
             <FaLinkedin />
           </a>
         </div>
