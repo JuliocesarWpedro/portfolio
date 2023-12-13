@@ -71,7 +71,7 @@
     }
   }
 
-  h1 {
+  h3 {
     @include text-l;
     font-size: 70px;
     max-width: 11ch;
@@ -201,7 +201,7 @@
     align-items: center;
     justify-content: center;
     height: 50px;
-    width: 200px;
+    width: 220px;
     gap: 10px;
     color: #fff;
     padding: 0 10px;

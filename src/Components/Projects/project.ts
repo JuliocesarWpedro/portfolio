@@ -11,7 +11,7 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    srcImage: '/AnimaisFantásticos.png',
+    srcImage: '/AnimaisFantásticos.webp',
     description: 'Projeto feito com Javascript',
     title: 'Animais Fantásticos',
     mainCategory: 'javascript',
@@ -22,7 +22,7 @@ export const projects: Project[] = [
       'https://animais-fantasticos-git-master-julio-cesar-w-pedros-projects.vercel.app/',
   },
   {
-    srcImage: '/Pokedex.png',
+    srcImage: '/Pokedex.webp',
     title: 'Pokedex',
     mainCategory: 'react',
     otherCategories: [

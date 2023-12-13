@@ -1,11 +1,17 @@
-import React from 'react';
+import {
+  Dispatch,
+  useRef,
+  useCallback,
+  useEffect,
+  SetStateAction,
+} from 'react';
 import { useLanguage } from '../../hooks/useLanguage';
 import { MdOutlineLanguage } from 'react-icons/md';
 import { IoIosArrowDown } from 'react-icons/io';
 import styles from './LanguageButton.module.scss';
 
 interface LanguageButtonProps {
-  setOpenModalLanguage: React.Dispatch<React.SetStateAction<boolean>>;
+  setOpenModalLanguage: Dispatch<SetStateAction<boolean>>;
   openModalLanguage: boolean;
 }
 
@@ -14,10 +20,10 @@ const LanguageButton = ({
   openModalLanguage,
 }: LanguageButtonProps) => {
   const { currentLanguage, handleChangeLanguage } = useLanguage();
-  const dropDownLanguage = React.useRef<HTMLDivElement>(null);
+  const dropDownLanguage = useRef<HTMLDivElement>(null);
   const { translate } = useLanguage();
 
-  const handleClickOutsideLanguageDropdown = React.useCallback(
+  const handleClickOutsideLanguageDropdown = useCallback(
     (e: Event) => {
       const target = e.target as HTMLElement;
       if (
@@ -31,7 +37,7 @@ const LanguageButton = ({
     },
     [openModalLanguage, setOpenModalLanguage],
   );
-  React.useEffect(() => {
+  useEffect(() => {
     const handleClick = (e: Event) => {
       handleClickOutsideLanguageDropdown(e);
     };

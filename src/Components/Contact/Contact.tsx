@@ -1,11 +1,9 @@
-import React from 'react';
 import styles from './Contact.module.scss';
 import { SubmitHandler, FieldValues, useForm } from 'react-hook-form';
 import { AiOutlineExclamationCircle } from 'react-icons/ai';
 import ElementDetail from '../../SvgComponents/ElementDetail';
 import { useLanguage } from '../../hooks/useLanguage';
-import Lottie from 'lottie-react';
-import animationEmail from '.././../Animation/Animation - 1701902791959.json';
+
 const Contact = () => {
   const { translate, currentLanguage } = useLanguage();
   const {
@@ -38,7 +36,6 @@ const Contact = () => {
       <div className={styles.contactText}>
         <h2> {translate('contactTitle')}</h2>
         <p>{translate('contactDescription')}</p>
-        <Lottie animationData={animationEmail} />
       </div>
       <form
         onSubmit={handleSubmit(onSubmit)}

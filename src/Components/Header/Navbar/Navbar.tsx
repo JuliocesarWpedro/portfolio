@@ -1,4 +1,4 @@
-import React from 'react';
+import { Dispatch } from 'react';
 import styles from './Navbar.module.scss';
 import { useLanguage } from '../../../hooks/useLanguage';
 import LanguageButton from '../LanguageButton';
@@ -7,7 +7,7 @@ const Navbar = ({
   setOpenModalLanguage,
   openModalLanguage,
 }: {
-  setOpenModalLanguage: React.Dispatch<React.SetStateAction<boolean>>;
+  setOpenModalLanguage: Dispatch<React.SetStateAction<boolean>>;
   openModalLanguage: boolean;
 }) => {
   const { translate } = useLanguage();
@@ -24,11 +24,11 @@ const Navbar = ({
         <li>
           <a href="/#contact">{translate('navBarContact')}</a>
         </li>
-        <LanguageButton
-          openModalLanguage={openModalLanguage}
-          setOpenModalLanguage={setOpenModalLanguage}
-        />
       </ul>
+      <LanguageButton
+        openModalLanguage={openModalLanguage}
+        setOpenModalLanguage={setOpenModalLanguage}
+      />
     </nav>
   );
 };

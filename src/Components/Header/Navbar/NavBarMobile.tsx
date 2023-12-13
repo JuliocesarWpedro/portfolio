@@ -1,5 +1,4 @@
-import React from 'react';
-
+import { useRef, Dispatch, useCallback, useState, useEffect } from 'react';
 import styles from './NavBarMobile.module.scss';
 import { useLanguage } from '../../../hooks/useLanguage';
 import IconClose from '../../../SvgComponents/IconClose';
@@ -9,19 +8,19 @@ const NavBarMobile = ({
   setOpenModalLanguage,
   openModalLanguage,
 }: {
-  setOpenModalLanguage: React.Dispatch<React.SetStateAction<boolean>>;
+  setOpenModalLanguage: Dispatch<React.SetStateAction<boolean>>;
   openModalLanguage: boolean;
 }) => {
   const { translate } = useLanguage();
-  const dropwdownRef = React.useRef<HTMLDivElement>(null);
+  const dropwdownRef = useRef<HTMLDivElement>(null);
 
-  const [openModal, setOpenModal] = React.useState<boolean>(false);
+  const [openModal, setOpenModal] = useState<boolean>(false);
 
   const handleModal = () => {
     setOpenModal(!openModal);
   };
 
-  const handleClickOutsideDropdown = React.useCallback(
+  const handleClickOutsideDropdown = useCallback(
     (e: Event) => {
       if (
         openModal &&
@@ -34,7 +33,7 @@ const NavBarMobile = ({
     [openModal],
   );
 
-  React.useEffect(() => {
+  useEffect(() => {
     const handleClick = (e: Event) => {
       handleClickOutsideDropdown(e);
     };
@@ -46,19 +45,17 @@ const NavBarMobile = ({
     };
   }, [handleClickOutsideDropdown]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (openModalLanguage) {
       setOpenModal(false);
     }
   }, [openModalLanguage, setOpenModalLanguage]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (openModal) {
       setOpenModalLanguage(false);
     }
   }, [openModal, setOpenModalLanguage]);
-
-
 
   return (
     <div ref={dropwdownRef} className={styles.containerModal}>

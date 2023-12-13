@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 import styles from './Projects.module.scss';
 import { useLanguage } from '../../hooks/useLanguage';
 import CardProject from './CardProject';
@@ -7,8 +7,7 @@ import { projects } from './project';
 
 const Projects = () => {
   const { translate } = useLanguage();
-  const [currentActiveFilter, setCurrentActiveFilter] =
-    React.useState<string>('all');
+  const [currentActiveFilter, setCurrentActiveFilter] = useState<string>('all');
 
   return (
     <div id="projects" className={styles.projectsContainer}>

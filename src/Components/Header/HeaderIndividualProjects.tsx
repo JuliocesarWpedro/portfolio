@@ -1,32 +1,34 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
 import styles from './Header.module.scss';
 import LanguageButton from './LanguageButton';
-import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
 import { PiKeyReturnFill } from 'react-icons/pi';
 
 const Header = () => {
-  const { scrollY } = useScroll();
-  const [hidden, setHidden] = React.useState<boolean>(false);
-  const [openModalLanguage, setOpenModalLanguage] =
-    React.useState<boolean>(false);
+  const [openModalLanguage, setOpenModalLanguage] = useState<boolean>(false);
 
-  useMotionValueEvent(scrollY, 'change', (latest) => {
-    const previous = scrollY.getPrevious();
-    if (latest > previous && latest > 150) {
-      setHidden(true);
-    } else {
-      setHidden(false);
-    }
-  });
+  const [prevScrollPos, setPrevScrollPos] = useState<number>(0);
+  const [visible, setVisible] = useState<boolean>(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.pageYOffset;
+      const isVisible =
+        prevScrollPos > currentScrollPos || currentScrollPos < 150;
+
+      setPrevScrollPos(currentScrollPos);
+      setVisible(isVisible);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [prevScrollPos]);
 
   return (
-    <motion.header
-      variants={{
-        visible: { y: 0 },
-        hidden: { y: '-350%' },
+    <header
+      style={{
+        transform: visible ? 'translateY(0)' : 'translateY(-100%)',
+        transition: 'transform 0.4s ease-in-out',
       }}
-      animate={hidden ? 'hidden' : 'visible'}
-      transition={{ duration: 0.4, ease: 'easeInOut' }}
       className={styles.header}
     >
       <h2>
@@ -48,7 +50,7 @@ const Header = () => {
           <PiKeyReturnFill style={{ width: '35px', height: '35px' }} />
         </a>
       </div>
-    </motion.header>
+    </header>
   );
 };
 
