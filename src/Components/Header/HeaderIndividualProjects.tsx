@@ -26,7 +26,7 @@ const Header = () => {
   return (
     <header
       style={{
-        transform: visible ? 'translateY(0)' : 'translateY(-100%)',
+        transform: visible ? 'translateY(0)' : 'translateY(-200%)',
         transition: 'transform 0.4s ease-in-out',
       }}
       className={styles.header}
@@ -48,7 +48,7 @@ const Header = () => {
           openModalLanguage={openModalLanguage}
           setOpenModalLanguage={setOpenModalLanguage}
         />
-        <a  href="/#projects">
+        <a href="/#projects">
           <PiKeyReturnFill style={{ width: '35px', height: '35px' }} />
         </a>
       </div>

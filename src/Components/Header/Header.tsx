@@ -25,7 +25,7 @@ const Header = () => {
   return (
     <header
       style={{
-        transform: visible ? 'translateY(0)' : 'translateY(-100%)',
+        transform: visible ? 'translateY(0)' : 'translateY(-200%)',
         transition: 'transform 0.4s ease-in-out',
       }}
       className={styles.header}
