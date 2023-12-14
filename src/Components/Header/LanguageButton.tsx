@@ -72,6 +72,7 @@ const LanguageButton = ({
       {openModalLanguage && (
         <ul className={styles.languageList}>
           <li
+            translate="no"
             className={
               currentLanguage === 'en'
                 ? styles.languageOptionChosen
@@ -82,6 +83,7 @@ const LanguageButton = ({
             {translate('language-en')}
           </li>
           <li
+            translate="no"
             className={
               currentLanguage === 'pt'
                 ? styles.languageOptionChosen

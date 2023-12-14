@@ -49,8 +49,8 @@ const IndividualProject = () => {
             key={index}
           >
             <div className={styles.ContainerProject}>
-              <h3>{project.title}</h3>
-              <a href="/#projects">
+              <h3 translate="no">{project.title}</h3>
+              <a translate="no" href="/#projects">
                 <p>{translate('return')}</p>
                 <PiKeyReturnFill alt="Return" />
               </a>
@@ -69,128 +69,132 @@ const IndividualProject = () => {
                   alt={project.altImage}
                 />
               </a>
-              <p className={styles.textDescriptionProject}>
+              <p translate="no" className={styles.textDescriptionProject}>
                 {currentLanguage === 'en'
                   ? project.description.en.text
                   : project.description.pt.text}
               </p>
-              <h4 className={styles.titleOtherCategories}>
+              <h4 translate="no" className={styles.titleOtherCategories}>
                 {translate('TechnologiesUsed')}
               </h4>
               <div className={styles.otherCategories}>
-                <span className={styles.spanCategory}>
+                <span translate="no" className={styles.spanCategory}>
                   {project.mainCategory.toLowerCase() === 'html' ? (
                     <>
-                      <p>{project.mainCategory}</p>
+                      <p translate="no">{project.mainCategory}</p>
                       <FaHtml5 />
                     </>
                   ) : null}
                   {project.mainCategory.toLowerCase() === 'javascript' ? (
                     <>
-                      <p>{project.mainCategory}</p>
+                      <p translate="no">{project.mainCategory}</p>
                       <IoLogoJavascript />
                     </>
                   ) : null}
                   {project.mainCategory.toLowerCase() === 'typescript' ? (
                     <>
-                      <p>{project.mainCategory}</p>
+                      <p translate="no">{project.mainCategory}</p>
                       <BiLogoTypescript />
                     </>
                   ) : null}
                   {project.mainCategory.toLowerCase() === 'react' ? (
                     <>
-                      <p>{project.mainCategory}</p>
+                      <p translate="no">{project.mainCategory}</p>
                       <FaReact />
                     </>
                   ) : null}
                   {project.mainCategory.toLowerCase() === 'css' ? (
                     <>
-                      <p>{project.mainCategory}</p>
+                      <p translate="no">{project.mainCategory}</p>
                       <FaCss3Alt />
                     </>
                   ) : null}
                   {project.mainCategory.toLowerCase() === 'scss' ? (
                     <>
-                      <p>{project.mainCategory}</p>
+                      <p translate="no">{project.mainCategory}</p>
                       <SaasIcon />
                     </>
                   ) : null}
                   {project.mainCategory.toLowerCase().toLowerCase() ===
                   'node' ? (
                     <>
-                      <p>{project.mainCategory}</p>
+                      <p translate="no">{project.mainCategory}</p>
                       <FaNode />
                     </>
                   ) : null}
                   {project.mainCategory.toLowerCase().toLowerCase() ===
                   'graphql' ? (
                     <>
-                      <p>{project.mainCategory}</p>
+                      <p translate="no">{project.mainCategory}</p>
                       <GrGraphQl />
                     </>
                   ) : null}
                   {project.mainCategory.toLowerCase().toLowerCase() ===
                   'next' ? (
                     <>
-                      <p>{project.mainCategory.toLowerCase()}</p>
+                      <p translate="no">{project.mainCategory.toLowerCase()}</p>
                       <SiNextdotjs />
                     </>
                   ) : null}
                 </span>
                 {project.otherCategories?.map((category, index) => {
                   return (
-                    <span className={styles.spanCategory} key={index}>
+                    <span
+                      translate="no"
+                      className={styles.spanCategory}
+                      key={index}
+                    >
                       {category.toLowerCase() === 'html' ? (
                         <>
-                          <p>{category}</p>
+                          <p translate="no">{category}</p>
                           <FaHtml5 />
                         </>
                       ) : null}
                       {category.toLowerCase() === 'javascript' ? (
                         <>
-                          <p>{category}</p>
+                          <p translate="no">{category}</p>
                           <IoLogoJavascript />
                         </>
                       ) : null}
                       {category.toLowerCase() === 'typescript' ? (
                         <>
-                          <p>{category}</p>
+                          <p translate="no">{category}</p>
                           <BiLogoTypescript />
                         </>
                       ) : null}
                       {category.toLowerCase() === 'react' ? (
                         <>
-                          <p>{category}</p>
+                          <p translate="no">{category}</p>
                           <FaReact />
                         </>
                       ) : null}
                       {category.toLowerCase() === 'css' ? (
                         <>
-                          <p>{category}</p>
+                          <p translate="no">{category}</p>
                           <FaCss3Alt />
                         </>
                       ) : null}
                       {category.toLowerCase() === 'scss' ? (
                         <>
-                          <p>{category}</p>
+                          <p translate="no">{category}</p>
                           <SaasIcon />
                         </>
                       ) : null}
                       {category.toLowerCase() === 'node' ? (
                         <>
-                          <p>{category}</p>
+                          <p translate="no">{category}</p>
                           <FaNode />
                         </>
                       ) : null}
                       {category.toLowerCase() === 'graphql' ? (
                         <>
-                          <p>{category}</p>
+                          <p translate="no">{category}</p>
                           <GrGraphQl />
                         </>
                       ) : null}
                       {category.toLowerCase() === 'next' ? (
                         <>
-                          <p>{category}</p>
+                          <p translate="no">{category}</p>
                           <SiNextdotjs />
                         </>
                       ) : null}
@@ -200,11 +204,11 @@ const IndividualProject = () => {
               </div>
               <div className={styles.projectUrls}>
                 <a target="__blank" href={project.urlProject}>
-                  <p>{translate('viewProject')}</p>
+                  <p translate="no">{translate('viewProject')}</p>
                   <CgWebsite />
                 </a>
                 <a target="__blank" href={project.urlGitHub}>
-                  <p>{translate('viewCode')}</p>
+                  <p translate="no">{translate('viewCode')}</p>
                   <FaGithub />
                 </a>
               </div>

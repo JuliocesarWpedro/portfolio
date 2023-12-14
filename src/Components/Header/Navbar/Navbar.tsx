@@ -16,13 +16,19 @@ const Navbar = ({
     <nav className={styles.navBar}>
       <ul>
         <li>
-          <a href="/#about">{translate('navBarAbout')}</a>
+          <a translate="no" href="/#about">
+            {translate('navBarAbout')}
+          </a>
         </li>
         <li>
-          <a href="/#projects">{translate('navBarProjects')}</a>
+          <a translate="no" href="/#projects">
+            {translate('navBarProjects')}
+          </a>
         </li>
         <li>
-          <a href="/#contact">{translate('navBarContact')}</a>
+          <a translate="no" href="/#contact">
+            {translate('navBarContact')}
+          </a>
         </li>
       </ul>
       <LanguageButton

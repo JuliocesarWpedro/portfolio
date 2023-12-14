@@ -7,7 +7,9 @@ const Footer = () => {
     <div className={styles.footer}>
       <div className={styles.footerContainer}>
         <h2>
-          <a href="/">Julio Cesar</a>
+          <a translate="no" href="/">
+            Julio Cesar
+          </a>
         </h2>
         <ul>
           <li>

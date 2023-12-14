@@ -17,11 +17,11 @@ const About = () => {
     <div className={styles.aboutContainer} id="about">
       <div className={styles.titleAboutContainer}>
         <div className={styles.titleDescription}>
-          <h2 className={styles.titleAbout}>
+          <h2 translate="no" className={styles.titleAbout}>
             {translate('titleNameAbout')}
-            <span>Julio Cesar</span>
+            <span translate="no">Julio Cesar</span>
           </h2>
-          <p>{translate('subTitleAbout')}</p>
+          <p translate="no">{translate('subTitleAbout')}</p>
         </div>
 
         <div className={styles.IconsContainer}>
@@ -47,7 +47,7 @@ const About = () => {
         </div>
         <div className={styles.linksSocialMedia}>
           <a target="__blank" href="https://github.com/JuliocesarWpedro">
-            <p>GitHub</p>
+            <p translate="no">GitHub</p>
             <span aria-label="GitHub Icon">
               <FaGithub alt="GitHub" />
             </span>
@@ -56,7 +56,7 @@ const About = () => {
             target="__blank"
             href="https://www.linkedin.com/in/j%C3%BAlio-c%C3%A9sar-wanderosfky-977301297/"
           >
-            <p>Linkedin</p>
+            <p translate="no">Linkedin</p>
             <span aria-label="Linkedin Icon">
               <FaLinkedin alt="Linkedin" />
             </span>

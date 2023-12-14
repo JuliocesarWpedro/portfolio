@@ -34,8 +34,10 @@ const CardProject: FC<CardProjectProps> = ({ project }) => {
         />
       </a>
       <div className={styles.cardProjectBoxTexts}>
-        <h3 className={styles.titleBox}>{project.title}</h3>
-        <p className={styles.descriptionBox}>
+        <h3 translate="no" className={styles.titleBox}>
+          {project.title}
+        </h3>
+        <p translate="no" className={styles.descriptionBox}>
           {currentLanguage === 'en'
             ? project.description.en.text
             : project.description.pt.text}
@@ -55,7 +57,7 @@ const CardProject: FC<CardProjectProps> = ({ project }) => {
               </a>
             </div>
             <button onClick={handleLinkClick} className={styles.moreInfos}>
-              <p>{translate('more')}</p>
+              <p translate="no">{translate('more')}</p>
               <span aria-label="More informations">
                 <FaExternalLinkAlt />
               </span>

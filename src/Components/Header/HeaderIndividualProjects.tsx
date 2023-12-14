@@ -32,7 +32,9 @@ const Header = () => {
       className={styles.header}
     >
       <h2>
-        <a href="/">Julio Cesar</a>
+        <a translate="no" href="/">
+          Julio Cesar
+        </a>
       </h2>
       <div
         className={styles.iconsIndividualProjectsHeader}
@@ -46,7 +48,7 @@ const Header = () => {
           openModalLanguage={openModalLanguage}
           setOpenModalLanguage={setOpenModalLanguage}
         />
-        <a href="/#projects">
+        <a  href="/#projects">
           <PiKeyReturnFill style={{ width: '35px', height: '35px' }} />
         </a>
       </div>

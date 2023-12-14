@@ -83,17 +83,17 @@ const NavBarMobile = ({
         <nav className={styles.navBarMobile}>
           <ul>
             <li>
-              <a onClick={handleModal} href="#about">
+              <a translate="no" onClick={handleModal} href="#about">
                 {translate('navBarAbout')}
               </a>
             </li>
             <li>
-              <a onClick={handleModal} href="#projects">
+              <a translate="no" onClick={handleModal} href="#projects">
                 {translate('navBarProjects')}
               </a>
             </li>
             <li>
-              <a onClick={handleModal} href="#contact">
+              <a translate="no" onClick={handleModal} href="#contact">
                 {translate('navBarContact')}
               </a>
             </li>

@@ -31,7 +31,9 @@ const Header = () => {
       className={styles.header}
     >
       <h2>
-        <a href="/">Julio Cesar</a>
+        <a translate="no" href="/">
+          Julio Cesar
+        </a>
       </h2>
       <Navbar
         openModalLanguage={openModalLanguage}

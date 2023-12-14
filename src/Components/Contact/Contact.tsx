@@ -32,16 +32,12 @@ const Contact = () => {
   };
   return (
     <div id="contact" className={styles.contactContainer}>
-      <ElementDetail  />
+      <ElementDetail />
       <div className={styles.contactText}>
-        <h2> {translate('contactTitle')}</h2>
-        <p>{translate('contactDescription')}</p>
+        <h2 translate="no"> {translate('contactTitle')}</h2>
+        <p translate="no">{translate('contactDescription')}</p>
       </div>
-      <form
-        onSubmit={handleSubmit(onSubmit)}
-        action=""
-        className={styles.formContact}
-      >
+      <form onSubmit={handleSubmit(onSubmit)} className={styles.formContact}>
         <div className={styles.inputNameContainer}>
           <input
             className={styles.inputName}
@@ -51,12 +47,13 @@ const Contact = () => {
                 : '1px solid #fff',
             }}
             type="text"
+            translate="no"
             placeholder={translate('contactInputName').toUpperCase()}
             {...register('Name', { required: true })}
           />
           {errors.Name && (
             <div className={styles.errorContainer}>
-              <span>{translate('errorNameInput')}</span>
+              <span translate="no">{translate('errorNameInput')}</span>
               <AiOutlineExclamationCircle
                 className={styles.iconExclamationName}
               />
@@ -65,6 +62,7 @@ const Contact = () => {
         </div>
         <div className={styles.inputEmailContainer}>
           <input
+            translate="no"
             className={styles.inputEmail}
             style={{
               borderBottom: errors.Subject
@@ -80,7 +78,7 @@ const Contact = () => {
           />
           {errors.Subject && (
             <div className={styles.errorContainer}>
-              <span>{translate('errorSubjectInput')}</span>
+              <span translate="no">{translate('errorSubjectInput')}</span>
               <AiOutlineExclamationCircle
                 className={styles.iconExclamationEmail}
               />
@@ -90,6 +88,7 @@ const Contact = () => {
         <div className={styles.inputMessageContainer}>
           <textarea
             className={styles.inputMessage}
+            translate="no"
             style={{
               borderBottom: errors.Message
                 ? '1px solid #ff6f5b'
@@ -101,7 +100,7 @@ const Contact = () => {
           ></textarea>
           {errors.Message && (
             <div className={styles.errorContainer}>
-              <span>{translate('errorMessageInput')}</span>
+              <span translate="no">{translate('errorMessageInput')}</span>
               <AiOutlineExclamationCircle
                 className={styles.iconExclamationMessage}
               />
@@ -109,7 +108,9 @@ const Contact = () => {
           )}
         </div>
 
-        <button type="submit">{translate('contactButtonSubmit')}</button>
+        <button translate="no" type="submit">
+          {translate('contactButtonSubmit')}
+        </button>
       </form>
     </div>
   );

@@ -10,8 +10,10 @@ const ProjectCardInProgress = () => {
     <article className={styles.cardProject}>
       <div className={styles.loadingElement}></div>
       <div className={styles.cardProjectBoxTexts}>
-        <h2 className={styles.titleBox}>{translate('projectInProgress')}</h2>
-        <p className={styles.descriptionBox}>
+        <h2 translate="no" className={styles.titleBox}>
+          {translate('projectInProgress')}
+        </h2>
+        <p translate="no" className={styles.descriptionBox}>
           {translate('projectInProgressDescription')}
         </p>
       </div>
