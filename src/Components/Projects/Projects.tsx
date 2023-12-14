@@ -20,6 +20,7 @@ const Projects = () => {
       <div className={styles.listProjects}>
         <div className={styles.leftContainer}>
           <button
+            translate="no"
             onClick={() => {
               if (currentActiveFilter !== 'all') {
                 setCurrentActiveFilter('all');
@@ -30,6 +31,7 @@ const Projects = () => {
             {translate('allprojectsFilter')}
           </button>
           <button
+            translate="no"
             onClick={() => {
               if (currentActiveFilter !== 'javascript') {
                 setCurrentActiveFilter('javascript');
@@ -42,6 +44,7 @@ const Projects = () => {
             Javascript
           </button>
           <button
+            translate="no"
             onClick={() => {
               if (currentActiveFilter !== 'react') {
                 setCurrentActiveFilter('react');
@@ -52,6 +55,7 @@ const Projects = () => {
             React
           </button>
           <button
+            translate="no"
             onClick={() => {
               if (currentActiveFilter !== 'node') {
                 setCurrentActiveFilter('node');
