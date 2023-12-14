@@ -12,7 +12,7 @@ const ProjectCardInProgress = () => {
       <div className={styles.cardProjectBoxTexts}>
         <h2 className={styles.titleBox}>{translate('projectInProgress')}</h2>
         <p className={styles.descriptionBox}>
-          {translate('projectDescription')}
+          {translate('projectInProgressDescription')}
         </p>
       </div>
       <div className={styles.cardBottomBox}>

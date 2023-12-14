@@ -12,7 +12,7 @@ interface CardProjectProps {
 }
 
 const CardProject: FC<CardProjectProps> = ({ project }) => {
-  const { translate } = useLanguage();
+  const { translate, currentLanguage } = useLanguage();
   const navigate = useNavigate();
   function formatRoute(title: string): string {
     return title.trim().toLowerCase().replace(/\s+/g, '-');
@@ -35,26 +35,32 @@ const CardProject: FC<CardProjectProps> = ({ project }) => {
       </a>
       <div className={styles.cardProjectBoxTexts}>
         <h3 className={styles.titleBox}>{project.title}</h3>
-        <p className={styles.descriptionBox}>{project.description}</p>
-        <div className={styles.cardBottomBox}>
-          <div className={styles.boxLinks}>
-            <a target="__blank" href={project.urlProject}>
-              <span aria-label="Link to Website">
-                <CgWebsite />
+        <p className={styles.descriptionBox}>
+          {currentLanguage === 'en'
+            ? project.description.en.text
+            : project.description.pt.text}
+        </p>
+        <div className={styles.cardBottomWrapper}>
+          <div className={styles.cardBottomBox}>
+            <div className={styles.boxLinks}>
+              <a target="__blank" href={project.urlProject}>
+                <span aria-label="Link to Website">
+                  <CgWebsite />
+                </span>
+              </a>
+              <a target="__blank" href={project.urlGitHub}>
+                <span aria-label="Link to Github">
+                  <FaGithub />
+                </span>
+              </a>
+            </div>
+            <button onClick={handleLinkClick} className={styles.moreInfos}>
+              <p>{translate('more')}</p>
+              <span aria-label="More informations">
+                <FaExternalLinkAlt />
               </span>
-            </a>
-            <a target="__blank" href={project.urlGitHub}>
-              <span aria-label="Link to Github">
-                <FaGithub />
-              </span>
-            </a>
+            </button>
           </div>
-          <button onClick={handleLinkClick} className={styles.moreInfos}>
-            <p>{translate('more')}</p>
-            <span aria-label="More informations">
-              <FaExternalLinkAlt />
-            </span>
-          </button>
         </div>
       </div>
     </article>

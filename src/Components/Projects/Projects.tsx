@@ -43,18 +43,6 @@ const Projects = () => {
           </button>
           <button
             onClick={() => {
-              if (currentActiveFilter !== 'typescript') {
-                setCurrentActiveFilter('typescript');
-              }
-            }}
-            className={
-              currentActiveFilter === 'typescript' ? styles.active : ''
-            }
-          >
-            Typescript
-          </button>
-          <button
-            onClick={() => {
               if (currentActiveFilter !== 'react') {
                 setCurrentActiveFilter('react');
               }

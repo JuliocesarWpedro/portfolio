@@ -37,6 +37,7 @@
   }
 
   a {
+    user-select: none;
     border: none;
     display: flex;
     align-items: center;
@@ -92,6 +93,27 @@
       color: $color-primary;
     }
   }
+
+}
+
+.textDescriptionProject {
+  margin-top: 50px;
+  @include text-body;
+  text-align: center;
+  font-weight: 200;
+  font-size: 20px;
+  color: #fff;
+}
+
+.titleOtherCategories {
+  text-align: center;
+  margin-top: 50px;
+  @include text-l;
+  color: #fff;
+
+  &:hover {
+    color: $color-primary;
+  }
 }
 
 .otherCategories {
@@ -113,6 +135,7 @@
   }
 
   span {
+    user-select: none;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -164,8 +187,10 @@
     }
 
     &:hover {
+      p {
+        font-weight: bold;
+      }
       background-color: lighten($color-bg2, 5%);
-      font-weight: bold;
 
       p {
         color: $color-primary;
@@ -196,6 +221,7 @@
   }
 
   a {
+    user-select: none;
     @include text-body;
     display: flex;
     align-items: center;

@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import Footer from '../Footer/Footer';
 import HeaderIndividualProjects from '../Header/HeaderIndividualProjects';
 import ParticlesContainer from '../ParticlesContainer/ParticlesContainer';
@@ -19,7 +20,7 @@ import { CgWebsite } from 'react-icons/cg';
 import { useLanguage } from '../../hooks/useLanguage';
 
 const IndividualProject = () => {
-  const { translate } = useLanguage();
+  const { translate, currentLanguage } = useLanguage();
   const { projectName } = useParams();
   const projectname = projectName?.substring(1).replace(/-/g, '').trim();
 
@@ -28,9 +29,11 @@ const IndividualProject = () => {
       project.title.replace(/\s+/g, '').toLowerCase() === projectname,
   );
 
-  setTimeout(() => {
-    window.scrollTo(0, 0);
-  }, 100);
+  useEffect(() => {
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 100);
+  }, []);
 
   return (
     <>
@@ -66,7 +69,74 @@ const IndividualProject = () => {
                   alt={project.altImage}
                 />
               </a>
+              <p className={styles.textDescriptionProject}>
+                {currentLanguage === 'en'
+                  ? project.description.en.text
+                  : project.description.pt.text}
+              </p>
+              <h4 className={styles.titleOtherCategories}>
+                {translate('TechnologiesUsed')}
+              </h4>
               <div className={styles.otherCategories}>
+                <span className={styles.spanCategory}>
+                  {project.mainCategory.toLowerCase() === 'html' ? (
+                    <>
+                      <p>{project.mainCategory}</p>
+                      <FaHtml5 />
+                    </>
+                  ) : null}
+                  {project.mainCategory.toLowerCase() === 'javascript' ? (
+                    <>
+                      <p>{project.mainCategory}</p>
+                      <IoLogoJavascript />
+                    </>
+                  ) : null}
+                  {project.mainCategory.toLowerCase() === 'typescript' ? (
+                    <>
+                      <p>{project.mainCategory}</p>
+                      <BiLogoTypescript />
+                    </>
+                  ) : null}
+                  {project.mainCategory.toLowerCase() === 'react' ? (
+                    <>
+                      <p>{project.mainCategory}</p>
+                      <FaReact />
+                    </>
+                  ) : null}
+                  {project.mainCategory.toLowerCase() === 'css' ? (
+                    <>
+                      <p>{project.mainCategory}</p>
+                      <FaCss3Alt />
+                    </>
+                  ) : null}
+                  {project.mainCategory.toLowerCase() === 'scss' ? (
+                    <>
+                      <p>{project.mainCategory}</p>
+                      <SaasIcon />
+                    </>
+                  ) : null}
+                  {project.mainCategory.toLowerCase().toLowerCase() ===
+                  'node' ? (
+                    <>
+                      <p>{project.mainCategory}</p>
+                      <FaNode />
+                    </>
+                  ) : null}
+                  {project.mainCategory.toLowerCase().toLowerCase() ===
+                  'graphql' ? (
+                    <>
+                      <p>{project.mainCategory}</p>
+                      <GrGraphQl />
+                    </>
+                  ) : null}
+                  {project.mainCategory.toLowerCase().toLowerCase() ===
+                  'next' ? (
+                    <>
+                      <p>{project.mainCategory.toLowerCase()}</p>
+                      <SiNextdotjs />
+                    </>
+                  ) : null}
+                </span>
                 {project.otherCategories?.map((category, index) => {
                   return (
                     <span className={styles.spanCategory} key={index}>

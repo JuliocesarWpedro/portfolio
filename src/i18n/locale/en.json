@@ -24,8 +24,11 @@
     "errorMessageInput": "Sorry, message is required",
     "allprojectsFilter": "All Projects",
     "projectInProgress": "Project in progress",
-    "projectDescription": "A new project is being carried out right now...",
+    "projectInProgressDescription": "A new project is being carried out right now...",
     "return": "Return",
-    "more": "More"
+    "more": "More",
+    "projectDescriptionAnimaisFantásticos": "The project was developed using JavaScript and incorporates both vertical and horizontal carousels, along with an accordion. Additionally, it features entrance and exit animations for a more dynamic and interactive experience.",
+    "projectDescriptionPokedex": "The project was built with React using Next.js and features an extensive list of Pokémons. With pagination features and search filters, users can easily find Pokémon by name and access a variety of detailed information, including height, weight, statistics, and individual types of each Pokémon.",
+    "TechnologiesUsed": "Technologies used"
   }
 }
