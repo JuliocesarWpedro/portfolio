@@ -1,15 +1,15 @@
-import React from 'react';
+import { useCallback } from 'react';
 import { Particles } from 'react-tsparticles';
 import { loadFull } from 'tsparticles';
 import styles from './particlesLoaded.module.scss';
 import { Engine } from 'tsparticles-engine';
 
 const ParticlesContainer = () => {
-  const particlesInit = React.useCallback(async (engine: Engine) => {
+  const particlesInit = useCallback(async (engine: Engine) => {
     await loadFull(engine);
   }, []);
 
-  const particlesLoaded = React.useCallback(async () => {}, []);
+  const particlesLoaded = useCallback(async () => {}, []);
 
   return (
     <Particles
@@ -18,6 +18,7 @@ const ParticlesContainer = () => {
       init={particlesInit}
       loaded={particlesLoaded}
       options={{
+        autoPlay: true,
         fullScreen: { enable: false },
         background: {
           color: {
@@ -39,7 +40,7 @@ const ParticlesContainer = () => {
           },
           modes: {
             push: {
-              quantity: 90,
+              quantity: 4,
             },
             repulse: {
               distance: 200,
@@ -59,9 +60,10 @@ const ParticlesContainer = () => {
             width: 1,
           },
           collisions: {
-            enable: true,
+            enable: false,
           },
           move: {
+            bounce: false,
             direction: 'none',
             enable: true,
             outModes: {
@@ -82,7 +84,7 @@ const ParticlesContainer = () => {
             value: 0.5,
           },
           shape: {
-            type: 'circle',
+            type: 'polygon',
           },
           size: {
             value: { min: 1, max: 5 },
