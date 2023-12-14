@@ -22,6 +22,10 @@
     "errorNameInput": "Desculpe, o nome é obrigatório.",
     "errorSubjectInput": "Por favor insira o assunto.",
     "errorMessageInput": "Desculpe, a mensagem é obrigatória.",
-    "allprojectsFilter": "Todos os Projetos"
+    "allprojectsFilter": "Todos Projetos",
+    "projectInProgress": "Projeto em andamento",
+    "projectDescription": "Um novo projeto está sendo realizado neste momento...",
+    "return": "Retornar",
+    "more": "Ver mais"
   }
 }

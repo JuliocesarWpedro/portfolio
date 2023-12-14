@@ -9,8 +9,8 @@
     "subTitleAbout": "I'm Developer Web",
     "projectTitle": "Projects",
     "buttonContact": "Contact-me",
-    "viewProject": "view Project",
-    "viewCode": "view Code",
+    "viewProject": "View Project",
+    "viewCode": "View Code",
     "contactTitle": "Contact",
     "contactDescription": "I would love to hear about your project and how I could help. Please fill in the form, and I’ll get back to you as soon as possible.",
     "contactInputName": "Name",
@@ -22,6 +22,10 @@
     "errorNameInput": "Sorry, name is required",
     "errorSubjectInput": "Please enter the subject",
     "errorMessageInput": "Sorry, message is required",
-    "allprojectsFilter": "All Projects"
+    "allprojectsFilter": "All Projects",
+    "projectInProgress": "Project in progress",
+    "projectDescription": "A new project is being carried out right now...",
+    "return": "Return",
+    "more": "More"
   }
 }

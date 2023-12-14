@@ -1,4 +1,3 @@
-import React from 'react';
 import Footer from '../Footer/Footer';
 import HeaderIndividualProjects from '../Header/HeaderIndividualProjects';
 import ParticlesContainer from '../ParticlesContainer/ParticlesContainer';
@@ -17,8 +16,10 @@ import { FaCss3Alt } from 'react-icons/fa';
 import { FaHtml5 } from 'react-icons/fa';
 import { FaGithub } from 'react-icons/fa';
 import { CgWebsite } from 'react-icons/cg';
+import { useLanguage } from '../../hooks/useLanguage';
 
 const IndividualProject = () => {
+  const { translate } = useLanguage();
   const { projectName } = useParams();
   const projectname = projectName?.substring(1).replace(/-/g, '').trim();
 
@@ -45,10 +46,10 @@ const IndividualProject = () => {
             key={index}
           >
             <div className={styles.ContainerProject}>
-              <h1>{project.title}</h1>
+              <h3>{project.title}</h3>
               <a href="/#projects">
-                <p>Retornar</p>
-                <PiKeyReturnFill />
+                <p>{translate('return')}</p>
+                <PiKeyReturnFill alt="Return" />
               </a>
             </div>
             <div
@@ -59,7 +60,11 @@ const IndividualProject = () => {
               }}
             >
               <a href={project.urlProject} target="__blank">
-                <img src={project.srcImage} alt={project.altImage} />
+                <img
+                  rel="preload"
+                  src={project.srcImage}
+                  alt={project.altImage}
+                />
               </a>
               <div className={styles.otherCategories}>
                 {project.otherCategories?.map((category, index) => {
@@ -125,11 +130,11 @@ const IndividualProject = () => {
               </div>
               <div className={styles.projectUrls}>
                 <a target="__blank" href={project.urlProject}>
-                  <p>View Project</p>
+                  <p>{translate('viewProject')}</p>
                   <CgWebsite />
                 </a>
                 <a target="__blank" href={project.urlGitHub}>
-                  <p>View Code</p>
+                  <p>{translate('viewCode')}</p>
                   <FaGithub />
                 </a>
               </div>
