@@ -18,6 +18,8 @@ import { FaHtml5 } from 'react-icons/fa';
 import { FaGithub } from 'react-icons/fa';
 import { CgWebsite } from 'react-icons/cg';
 import { useLanguage } from '../../hooks/useLanguage';
+import { SiExpress } from 'react-icons/si';
+import { SiTailwindcss } from 'react-icons/si';
 
 const IndividualProject = () => {
   const { translate, currentLanguage } = useLanguage();
@@ -136,6 +138,13 @@ const IndividualProject = () => {
                       <SiNextdotjs />
                     </>
                   ) : null}
+                  {project.mainCategory.toLowerCase().toLowerCase() ===
+                  'tailwindcss' ? (
+                    <>
+                      <p translate="no">{project.mainCategory.toLowerCase()}</p>
+                      <SiTailwindcss />
+                    </>
+                  ) : null}
                 </span>
                 {project.otherCategories?.map((category, index) => {
                   return (
@@ -196,6 +205,12 @@ const IndividualProject = () => {
                         <>
                           <p translate="no">{category}</p>
                           <SiNextdotjs />
+                        </>
+                      ) : null}
+                      {category.toLowerCase() === 'express' ? (
+                        <>
+                          <p translate="no">{category}</p>
+                          <SiExpress />
                         </>
                       ) : null}
                     </span>
