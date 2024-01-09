@@ -71,9 +71,9 @@ export const projects: Project[] = [
   },
   {
     srcImage: '/CadastrarCliente.webp',
-    title: 'Cadastrar Usuário',
+    title: 'Cadastrar Usuários',
     mainCategory: 'node',
-    otherCategories: ['express', 'react', 'tailwind'],
+    otherCategories: ['express', 'react', 'tailwindcss'],
     description: {
       pt: {
         text: 'Este projeto é uma plataforma de cadastro de usuários, desenvolvida com Node.js e Express para o backend, e React com tailwindcss no frontend. Permite criar contas com e-mail, telefone e nome, validando os dados antes de armazená-los no banco. A experiência interativa e segura garante um registro confiável para os usuários, com validação em tempo real e comunicação eficiente entre cliente e servidor.',
@@ -82,7 +82,7 @@ export const projects: Project[] = [
         text: 'This project is a user registration platform, developed with Node.js and Express for the backend, and React with tailwindcss on the frontend. Allows you to create accounts with email, telephone and name, validating the data before storing it in the bank. The interactive and secure experience ensures reliable registration for users, with real-time validation and efficient communication between client and server.',
       },
     },
-    altImage: 'Projeto Cadastrar usuário',
+    altImage: 'Projeto Cadastrar Usuários',
     urlGitHub: 'https://github.com/JuliocesarWpedro/users-typescript-api',
     urlProject: 'https://crud-users-frontend.vercel.app/',
   },
