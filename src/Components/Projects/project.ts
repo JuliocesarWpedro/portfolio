@@ -29,7 +29,7 @@ export const projects: Project[] = [
     },
     title: 'Animais Fantásticos',
     mainCategory: 'javascript',
-    otherCategories: ['html', 'css',],
+    otherCategories: ['html', 'css'],
     altImage: 'Projeto AnimaisFantásticos',
     urlGitHub: 'https://github.com/JuliocesarWpedro/animais-fantasticos',
     urlProject:
@@ -56,7 +56,7 @@ export const projects: Project[] = [
     srcImage: '/Pokedex.webp',
     title: 'Pokedex',
     mainCategory: 'react',
-    otherCategories: [ 'next', 'css'],
+    otherCategories: ['next', 'css'],
     description: {
       pt: {
         text: 'O projeto foi construído com React usando Next.js e apresenta uma extensa lista de Pokémons. Com recursos de paginação e filtros de busca, os usuários podem facilmente encontrar Pokémon por nome, além de acessar uma variedade de informações detalhadas, incluindo altura, peso, estatísticas e tipos individuais de cada Pokémon.',
@@ -68,5 +68,22 @@ export const projects: Project[] = [
     altImage: 'Projeto Pokedex',
     urlGitHub: 'https://github.com/JuliocesarWpedro/pokedexNext',
     urlProject: 'https://pokedex-next-julio.vercel.app/',
+  },
+  {
+    srcImage: '/CadastrarCliente.webp',
+    title: 'Cadastrar Cliente',
+    mainCategory: 'node',
+    otherCategories: ['express', 'react', 'tailwind'],
+    description: {
+      pt: {
+        text: 'Este projeto é uma plataforma de cadastro de usuários, desenvolvida com Node.js e Express para o backend, e React com tailwindcss no frontend. Permite criar contas com e-mail, telefone e nome, validando os dados antes de armazená-los no banco. A experiência interativa e segura garante um registro confiável para os usuários, com validação em tempo real e comunicação eficiente entre cliente e servidor.',
+      },
+      en: {
+        text: 'This project is a user registration platform, developed with Node.js and Express for the backend, and React with tailwindcss on the frontend. Allows you to create accounts with email, telephone and name, validating the data before storing it in the bank. The interactive and secure experience ensures reliable registration for users, with real-time validation and efficient communication between client and server.',
+      },
+    },
+    altImage: 'Projeto Cadastrar Cliente',
+    urlGitHub: 'https://github.com/JuliocesarWpedro/users-typescript-api',
+    urlProject: 'https://crud-users-frontend.vercel.app/',
   },
 ];
