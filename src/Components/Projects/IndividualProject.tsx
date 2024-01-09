@@ -6,20 +6,36 @@ import styles from './IndividualProject.module.scss';
 import { useParams } from 'react-router-dom';
 import { Project, projects } from './project';
 import { PiKeyReturnFill } from 'react-icons/pi';
-import { FaReact } from 'react-icons/fa';
+import { FaReact, FaHtml5, FaCss3Alt, FaNode, FaGithub } from 'react-icons/fa';
 import { IoLogoJavascript } from 'react-icons/io5';
 import { BiLogoTypescript } from 'react-icons/bi';
-import { SiNextdotjs } from 'react-icons/si';
-import { GrGraphQl } from 'react-icons/gr';
-import { FaNode } from 'react-icons/fa';
+import {
+  SiNextdotjs,
+  SiExpress,
+  SiTailwindcss,
+  SiMongodb,
+} from 'react-icons/si';
 import SaasIcon from '../../SvgComponents/Sass';
-import { FaCss3Alt } from 'react-icons/fa';
-import { FaHtml5 } from 'react-icons/fa';
-import { FaGithub } from 'react-icons/fa';
 import { CgWebsite } from 'react-icons/cg';
 import { useLanguage } from '../../hooks/useLanguage';
-import { SiExpress } from 'react-icons/si';
-import { SiTailwindcss } from 'react-icons/si';
+
+interface CategoryIconMap {
+  [key: string]: JSX.Element;
+}
+
+const categoryIconMap: CategoryIconMap = {
+  html: <FaHtml5 />,
+  javascript: <IoLogoJavascript />,
+  typescript: <BiLogoTypescript />,
+  react: <FaReact />,
+  css: <FaCss3Alt />,
+  scss: <SaasIcon />,
+  node: <FaNode />,
+  next: <SiNextdotjs />,
+  tailwindcss: <SiTailwindcss />,
+  mongodb: <SiMongodb />,
+  express: <SiExpress />,
+};
 
 const IndividualProject = () => {
   const { translate, currentLanguage } = useLanguage();
@@ -37,12 +53,25 @@ const IndividualProject = () => {
     }, 100);
   }, []);
 
+  const renderCategoryIcons = (categories: string[], parentIndex: number) => {
+    return categories.map((category: string, index: number) => (
+      <span translate="no" key={`${parentIndex}-${index}`}>
+        {categoryIconMap[category.toLowerCase()] ? (
+          <>
+            <p translate="no">{category}</p>
+            {categoryIconMap[category.toLowerCase() as keyof CategoryIconMap]}
+          </>
+        ) : null}
+      </span>
+    ));
+  };
+
   return (
     <>
       <ParticlesContainer />
       <HeaderIndividualProjects />
       <div className={styles.ProjectContainer}>
-        {filteredProjects.map((project: Project, index) => (
+        {filteredProjects.map((project: Project, index: number) => (
           <div
             style={{
               position: 'relative',
@@ -80,142 +109,12 @@ const IndividualProject = () => {
                 {translate('TechnologiesUsed')}
               </h4>
               <div className={styles.otherCategories}>
-                <span translate="no" className={styles.spanCategory}>
-                  {project.mainCategory.toLowerCase() === 'html' ? (
-                    <>
-                      <p translate="no">{project.mainCategory}</p>
-                      <FaHtml5 />
-                    </>
-                  ) : null}
-                  {project.mainCategory.toLowerCase() === 'javascript' ? (
-                    <>
-                      <p translate="no">{project.mainCategory}</p>
-                      <IoLogoJavascript />
-                    </>
-                  ) : null}
-                  {project.mainCategory.toLowerCase() === 'typescript' ? (
-                    <>
-                      <p translate="no">{project.mainCategory}</p>
-                      <BiLogoTypescript />
-                    </>
-                  ) : null}
-                  {project.mainCategory.toLowerCase() === 'react' ? (
-                    <>
-                      <p translate="no">{project.mainCategory}</p>
-                      <FaReact />
-                    </>
-                  ) : null}
-                  {project.mainCategory.toLowerCase() === 'css' ? (
-                    <>
-                      <p translate="no">{project.mainCategory}</p>
-                      <FaCss3Alt />
-                    </>
-                  ) : null}
-                  {project.mainCategory.toLowerCase() === 'scss' ? (
-                    <>
-                      <p translate="no">{project.mainCategory}</p>
-                      <SaasIcon />
-                    </>
-                  ) : null}
-                  {project.mainCategory.toLowerCase().toLowerCase() ===
-                  'node' ? (
-                    <>
-                      <p translate="no">{project.mainCategory}</p>
-                      <FaNode />
-                    </>
-                  ) : null}
-                  {project.mainCategory.toLowerCase().toLowerCase() ===
-                  'graphql' ? (
-                    <>
-                      <p translate="no">{project.mainCategory}</p>
-                      <GrGraphQl />
-                    </>
-                  ) : null}
-                  {project.mainCategory.toLowerCase().toLowerCase() ===
-                  'next' ? (
-                    <>
-                      <p translate="no">{project.mainCategory.toLowerCase()}</p>
-                      <SiNextdotjs />
-                    </>
-                  ) : null}
-                  {project.mainCategory.toLowerCase().toLowerCase() ===
-                  'tailwindcss' ? (
-                    <>
-                      <p translate="no">{project.mainCategory.toLowerCase()}</p>
-                      <SiTailwindcss />
-                    </>
-                  ) : null}
-                </span>
-                {project.otherCategories?.map((category, index) => {
-                  return (
-                    <span
-                      translate="no"
-                      className={styles.spanCategory}
-                      key={index}
-                    >
-                      {category.toLowerCase() === 'html' ? (
-                        <>
-                          <p translate="no">{category}</p>
-                          <FaHtml5 />
-                        </>
-                      ) : null}
-                      {category.toLowerCase() === 'javascript' ? (
-                        <>
-                          <p translate="no">{category}</p>
-                          <IoLogoJavascript />
-                        </>
-                      ) : null}
-                      {category.toLowerCase() === 'typescript' ? (
-                        <>
-                          <p translate="no">{category}</p>
-                          <BiLogoTypescript />
-                        </>
-                      ) : null}
-                      {category.toLowerCase() === 'react' ? (
-                        <>
-                          <p translate="no">{category}</p>
-                          <FaReact />
-                        </>
-                      ) : null}
-                      {category.toLowerCase() === 'css' ? (
-                        <>
-                          <p translate="no">{category}</p>
-                          <FaCss3Alt />
-                        </>
-                      ) : null}
-                      {category.toLowerCase() === 'scss' ? (
-                        <>
-                          <p translate="no">{category}</p>
-                          <SaasIcon />
-                        </>
-                      ) : null}
-                      {category.toLowerCase() === 'node' ? (
-                        <>
-                          <p translate="no">{category}</p>
-                          <FaNode />
-                        </>
-                      ) : null}
-                      {category.toLowerCase() === 'graphql' ? (
-                        <>
-                          <p translate="no">{category}</p>
-                          <GrGraphQl />
-                        </>
-                      ) : null}
-                      {category.toLowerCase() === 'next' ? (
-                        <>
-                          <p translate="no">{category}</p>
-                          <SiNextdotjs />
-                        </>
-                      ) : null}
-                      {category.toLowerCase() === 'express' ? (
-                        <>
-                          <p translate="no">{category}</p>
-                          <SiExpress />
-                        </>
-                      ) : null}
-                    </span>
-                  );
-                })}
+                {renderCategoryIcons([project.mainCategory], 0)}
+                {project.otherCategories?.map(
+                  (category: string, index: number) => {
+                    return renderCategoryIcons([category], index);
+                  },
+                )}
               </div>
               <div className={styles.projectUrls}>
                 <a target="__blank" href={project.urlProject}>

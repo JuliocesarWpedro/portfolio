@@ -73,13 +73,13 @@ export const projects: Project[] = [
     srcImage: '/CadastrarCliente.webp',
     title: 'Cadastrar Usuários',
     mainCategory: 'node',
-    otherCategories: ['express', 'react', 'tailwindcss'],
+    otherCategories: ['express', 'mongoDB', 'react', 'tailwindcss'],
     description: {
       pt: {
-        text: 'Este projeto é uma plataforma de cadastro de usuários, desenvolvida com Node.js e Express para o backend, e React com tailwindcss no frontend. Permite criar contas com e-mail, telefone e nome, validando os dados antes de armazená-los no banco. A experiência interativa e segura garante um registro confiável para os usuários, com validação em tempo real e comunicação eficiente entre cliente e servidor.',
+        text: 'Este projeto é uma plataforma de cadastro de usuários, desenvolvida com Node.js e Express no backend, e React com tailwindcss no frontend. Permite criar contas com nome, email e telefone, validando os dados antes de armazená-los no banco de dados. A experiência interativa e segura garante um registro confiável para os usuários, com validação em tempo real e comunicação eficiente entre cliente e servidor.',
       },
       en: {
-        text: 'This project is a user registration platform, developed with Node.js and Express for the backend, and React with tailwindcss on the frontend. Allows you to create accounts with email, telephone and name, validating the data before storing it in the bank. The interactive and secure experience ensures reliable registration for users, with real-time validation and efficient communication between client and server.',
+        text: 'This project is a user registration platform, developed with Node.js and Express on the backend, and React with tailwindcss on the frontend. Allows you to create accounts with name, email and telephone number, validating the data before storing it in the database. The interactive and secure experience guarantees reliable registration for users, with real-time validation and efficient communication between client and server.',
       },
     },
     altImage: 'Projeto Cadastrar Usuários',
