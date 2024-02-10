@@ -86,6 +86,10 @@
     border: none;
     outline: none;
 
+    span {
+      display: flex;
+    }
+
     &:hover {
       scale: 1.10;
 
