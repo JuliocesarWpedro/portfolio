@@ -86,4 +86,21 @@ export const projects: Project[] = [
     urlGitHub: 'https://github.com/JuliocesarWpedro/users-typescript-api',
     urlProject: 'https://crud-users-frontend.vercel.app/',
   },
+  {
+    srcImage: '/Devstore.webp',
+    title: 'devstore',
+    mainCategory: 'next',
+    otherCategories: ['react', 'typescript', 'tailwindcss'],
+    description: {
+      pt: {
+        text: 'Este projeto representa uma plataforma de eccomerce construída com tecnologias avançadas, incluindo Next.js, TypeScript e tailwindcss. Implementado com a utilização de Route Handles, o sistema oferece um filtro de busca eficiente e proporciona uma página dedicada para cada produto, detalhando informações relevantes. Além disso, proporciona aos usuários a facilidade de adicionar produtos ao carrinho de compras, tornando a experiência de compra mais intuitiva e conveniente.',
+      },
+      en: {
+        text: 'This project represents an e-commerce platform built with advanced technologies, including Next.js, TypeScript, and tailwindcss. Implemented using Route Handles, the system provides an efficient search filter and offers a dedicated page for each product, detailing relevant information. Additionally, it provides users with the convenience of adding products to the shopping cart, making the shopping experience more intuitive and convenient.',
+      },
+    },
+    altImage: 'Projeto devstore',
+    urlGitHub: 'https://github.com/JuliocesarWpedro/dev-store',
+    urlProject: 'https://dev-store-julio-cesar-w-pedros-projects.vercel.app/',
+  },
 ];
