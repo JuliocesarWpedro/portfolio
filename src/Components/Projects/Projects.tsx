@@ -33,19 +33,6 @@ const Projects = () => {
           <button
             translate="no"
             onClick={() => {
-              if (currentActiveFilter !== 'javascript') {
-                setCurrentActiveFilter('javascript');
-              }
-            }}
-            className={
-              currentActiveFilter === 'javascript' ? styles.active : ''
-            }
-          >
-            Javascript
-          </button>
-          <button
-            translate="no"
-            onClick={() => {
               if (currentActiveFilter !== 'react') {
                 setCurrentActiveFilter('react');
               }
@@ -64,6 +51,30 @@ const Projects = () => {
             className={currentActiveFilter === 'node' ? styles.active : ''}
           >
             Node
+          </button>
+          <button
+            translate="no"
+            onClick={() => {
+              if (currentActiveFilter !== 'next') {
+                setCurrentActiveFilter('next');
+              }
+            }}
+            className={currentActiveFilter === 'next' ? styles.active : ''}
+          >
+            Next
+          </button>
+          <button
+            translate="no"
+            onClick={() => {
+              if (currentActiveFilter !== 'javascript') {
+                setCurrentActiveFilter('javascript');
+              }
+            }}
+            className={
+              currentActiveFilter === 'javascript' ? styles.active : ''
+            }
+          >
+            Javascript
           </button>
         </div>
         <div className={styles.rightContainer}>
