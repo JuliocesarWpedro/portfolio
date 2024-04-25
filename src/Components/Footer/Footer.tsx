@@ -22,7 +22,7 @@ const Footer = () => {
           <li>
             <a
               target="__blank"
-              href="https://www.linkedin.com/in/j%C3%BAlio-c%C3%A9sar-wanderosfky-977301297/"
+              href="https://www.linkedin.com/in/julio-cesar-wanderosfky-977301297/"
             >
               <span aria-label="Linkedin Link">
                 <FaLinkedin />
