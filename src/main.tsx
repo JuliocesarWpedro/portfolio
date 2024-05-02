@@ -13,14 +13,9 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
       <Router>
         <Routes>
           <Route path="/" element={<App />} />
-          <Route
-            path="/project/:projectName"
-            element={<IndividualProject  />}
-          />
+          <Route path="/project" element={<IndividualProject />} />
         </Routes>
       </Router>
     </LanguageProvider>
   </React.StrictMode>,
-
 );
-

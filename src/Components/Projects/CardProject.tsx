@@ -15,10 +15,19 @@ const CardProject: FC<CardProjectProps> = ({ project }) => {
   const { translate, currentLanguage } = useLanguage();
   const navigate = useNavigate();
   function formatRoute(title: string): string {
-    return title.trim().toLowerCase().replace(/\s+/g, '-');
+    return title
+      .trim()
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .replace(/[\s-]+/g, '');
   }
   const handleLinkClick = () => {
-    navigate(`/project/:${formatRoute(project.title)}`);
+    const formattedProjectTitle = encodeURIComponent(
+      formatRoute(project.title),
+    );
+    console.log('formattedProjectTitle:', formattedProjectTitle);
+    navigate(`/project?projectName=${formattedProjectTitle}`);
   };
 
   return (

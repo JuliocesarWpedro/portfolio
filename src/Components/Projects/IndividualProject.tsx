@@ -3,7 +3,7 @@ import Footer from '../Footer/Footer';
 import HeaderIndividualProjects from '../Header/HeaderIndividualProjects';
 import ParticlesContainer from '../ParticlesContainer/ParticlesContainer';
 import styles from './IndividualProject.module.scss';
-import { useParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import { Project, projects } from './project';
 import { PiKeyReturnFill } from 'react-icons/pi';
 import { FaReact, FaHtml5, FaCss3Alt, FaNode, FaGithub } from 'react-icons/fa';
@@ -40,12 +40,23 @@ const categoryIconMap: CategoryIconMap = {
 
 const IndividualProject = () => {
   const { translate, currentLanguage } = useLanguage();
-  const { projectName } = useParams();
-  const projectname = projectName?.substring(1).replace(/-/g, '').trim();
+  const [searchParams] = useSearchParams();
+  const projectName = searchParams.get('projectName');
+
+  function formatRoute(title: string): string {
+    return title
+      .trim()
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .replace(/[\s-]+/g, '');
+  }
+
+  const validProjectName = projectName || '';
 
   const filteredProjects = projects.filter(
     (project: Project) =>
-      project.title.replace(/\s+/g, '').toLowerCase() === projectname,
+      formatRoute(project.title) === formatRoute(validProjectName),
   );
 
   useEffect(() => {
