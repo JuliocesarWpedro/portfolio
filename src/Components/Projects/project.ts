@@ -36,6 +36,58 @@ export const projects: Project[] = [
       'https://animais-fantasticos-git-master-julio-cesar-w-pedros-projects.vercel.app/',
   },
   {
+    srcImage: '/public/Bikcraft.webp',
+    description: {
+      pt: {
+        text: 'Este projeto foi construído utilizando HTML, CSS e JavaScript, e inclui uma página de compras onde os usuários podem customizar suas próprias bicicletas.',
+      },
+      en: {
+        text: 'This project was built using HTML, CSS, and JavaScript, and it features a shopping page where users can customize their own bicycles.',
+      },
+    },
+    title: 'Bikcraft',
+    mainCategory: 'javascript',
+    otherCategories: ['html', 'css'],
+    altImage: 'Projeto AnimaisFantásticos',
+    urlGitHub: 'https://github.com/JuliocesarWpedro/Bikcraft',
+    urlProject: 'https://juliocesarwpedro.github.io/Bikcraft/',
+  },
+  {
+    srcImage: '/ClothingStore.webp',
+    title: 'devstore',
+    mainCategory: 'next',
+    otherCategories: ['react', 'typescript', 'scss'],
+    description: {
+      pt: {
+        text: 'Este projeto representa uma plataforma de eccomerce construída com tecnologias avançadas, incluindo React, TypeScript e scss. Possui um filtro de produtos incluindo tamanho, cores e faixa de preço. Além disso, proporciona aos usuários a facilidade de adicionar produtos ao carrinho de compras, tornando a experiência de compra mais intuitiva e conveniente.',
+      },
+      en: {
+        text: 'This project represents an e-commerce platform built with advanced technologies including React, TypeScript and scss. It has a product filter including size, cores and price range. Furthermore, it provides users with the ease of adding products to the shopping cart, making the shopping experience more intuitive and convenient.',
+      },
+    },
+    altImage: 'Projeto Store',
+    urlGitHub: 'https://github.com/JuliocesarWpedro/store',
+    urlProject:
+      'https://store-git-master-julio-cesar-w-pedros-projects.vercel.app/',
+  },
+  {
+    srcImage: '/lanternaLuminosa.webp',
+    title: 'Lanterna Luminosa',
+    mainCategory: 'next',
+    otherCategories: ['react', 'tailwindcss', 'zustand'],
+    description: {
+      pt: {
+        text: 'Este é um projeto voluntário de uma landing page para uma Associação Civil do Terceiro Setor dedicada ao combate ao abuso contra mulheres e seus filhos. As tecnologias usadas são Next, Tailwind CSS e Zustand.',
+      },
+      en: {
+        text: 'This is a volunteer project for a landing page for a Third Sector Civil Association dedicated to combating abuse against women and their children. The technologies used are Next.js, Tailwind CSS, and Zustand.',
+      },
+    },
+    altImage: 'Projeto Lanterna Luminosa',
+    urlGitHub: 'https://github.com/bolodissenoura/lantera-luminosa',
+    urlProject: 'https://www.lanternaluminosa.com.br/',
+  },
+  {
     srcImage: '/dogs.webp',
     description: {
       pt: {

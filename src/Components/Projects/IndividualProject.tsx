@@ -20,7 +20,7 @@ import { CgWebsite } from 'react-icons/cg';
 import { useLanguage } from '../../hooks/useLanguage';
 
 interface CategoryIconMap {
-  [key: string]: JSX.Element;
+  [key: string]: JSX.Element | null;
 }
 
 const categoryIconMap: CategoryIconMap = {
@@ -33,6 +33,7 @@ const categoryIconMap: CategoryIconMap = {
   node: <FaNode />,
   next: <SiNextdotjs />,
   tailwindcss: <SiTailwindcss />,
+  zustand: null,
   mongodb: <SiMongodb />,
   express: <SiExpress />,
 };
@@ -54,16 +55,16 @@ const IndividualProject = () => {
   }, []);
 
   const renderCategoryIcons = (categories: string[], parentIndex: number) => {
-    return categories.map((category: string, index: number) => (
-      <span translate="no" key={`${parentIndex}-${index}`}>
-        {categoryIconMap[category.toLowerCase()] ? (
-          <>
-            <p translate="no">{category}</p>
-            {categoryIconMap[category.toLowerCase() as keyof CategoryIconMap]}
-          </>
-        ) : null}
-      </span>
-    ));
+    return categories.map((category: string, index: number) => {
+      const icon =
+        categoryIconMap[category.toLowerCase() as keyof CategoryIconMap];
+      return (
+        <span translate="no" key={`${parentIndex}-${index}`}>
+          {icon && icon}
+          <p translate="no">{category}</p>
+        </span>
+      );
+    });
   };
 
   return (
