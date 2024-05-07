@@ -1,14 +1,29 @@
 @import '../../styles/variables';
 
 .footer {
-
   width: 100%;
   background-color: $color-bg2;
   position: relative;
-  padding: 60px 80px 20px 80px;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
+.footerContainer {
+  padding: 60px 80px 20px 80px;
+  display: flex;
+  flex-direction: column;
 
+  div:first-child {
+    background: #fff;
+    display: block;
+    height: 1px;
+    content: '';
+    width: 100%;
+    max-width: 1700px;
+  }
 
   @media (max-width: 900px) {
     padding: 60px 80px 20px 80px;
@@ -21,53 +36,63 @@
   @media (max-width: 500px) {
     padding: 60px 20px 20px 20px;
   }
-}
 
-.footerContainer {
+  max-width: 1700px;
+  margin-top: 40px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-top: 1px solid #fff;
-  padding-top: 30px;
 
-  h2 {
-    user-select: none;
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 24px;
-    font-weight: bold;
-    line-height: 32px;
-    letter-spacing: -0.44px;
 
-    a {
-      &:hover {
-        color: $color-primary;
-        transition: color 0.3s ease;
+  div:nth-child(2) {
+    display: flex;
+    padding-top: 30px;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    h2 {
+      user-select: none;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 24px;
+      font-weight: bold;
+      line-height: 32px;
+      letter-spacing: -0.44px;
+
+      a {
+        &:hover {
+          color: $color-primary;
+          transition: color 0.3s ease;
+        }
       }
+
     }
 
-  }
+    ul {
+      display: flex;
+      gap: 30px;
 
-  ul {
-    display: flex;
-    gap: 30px;
+      a {
+        width: 40px;
+        display: block;
 
-    a {
-      width: 40px;
-      display: block;
+        &:hover {
+          svg {
+            fill: $color-primary;
+            transition: fill 0.3s ease;
+          }
 
-      &:hover {
-        svg {
-          fill: $color-primary;
-          transition: fill 0.3s ease;
         }
 
-      }
+        svg {
+          width: 100%;
+          height: 100%;
 
-      svg {
-        width: 100%;
-        height: 100%;
-
+        }
       }
     }
   }
+
+
 }

@@ -24,7 +24,10 @@
     #0000001c -3px -3px 6px 1px inset,
     rgba(67, 166, 122, 0.02) 0px 3px 5px;
 
-
+  @media(min-width: 1750px) {
+    width: 85%;
+    max-width: 1700px;
+  }
 
   @media(max-width: 600px) {
     padding: 15px 40px;

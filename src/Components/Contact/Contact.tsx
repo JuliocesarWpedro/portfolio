@@ -33,85 +33,87 @@ const Contact = () => {
   return (
     <div id="contact" className={styles.contactContainer}>
       <ElementDetail />
-      <div className={styles.contactText}>
-        <h2 translate="no"> {translate('contactTitle')}</h2>
-        <p translate="no">{translate('contactDescription')}</p>
-      </div>
-      <form onSubmit={handleSubmit(onSubmit)} className={styles.formContact}>
-        <div className={styles.inputNameContainer}>
-          <input
-            className={styles.inputName}
-            style={{
-              borderBottom: errors.Name
-                ? '1px solid #ff6f5b'
-                : '1px solid #fff',
-            }}
-            type="text"
-            translate="no"
-            placeholder={translate('contactInputName').toUpperCase()}
-            {...register('Name', { required: true })}
-          />
-          {errors.Name && (
-            <div className={styles.errorContainer}>
-              <span translate="no">{translate('errorNameInput')}</span>
-              <AiOutlineExclamationCircle
-                className={styles.iconExclamationName}
-              />
-            </div>
-          )}
+      <div className={styles.containerTexts}>
+        <div className={styles.contactText}>
+          <h2 translate="no"> {translate('contactTitle')}</h2>
+          <p translate="no">{translate('contactDescription')}</p>
         </div>
-        <div className={styles.inputEmailContainer}>
-          <input
-            translate="no"
-            className={styles.inputEmail}
-            style={{
-              borderBottom: errors.Subject
-                ? '1px solid #ff6f5b'
-                : '1px solid #fff',
-            }}
-            type="text"
-            placeholder={translate('contactInputSubject').toUpperCase()}
-            {...register('Subject', {
-              required: true,
-              shouldUnregister: true,
-            })}
-          />
-          {errors.Subject && (
-            <div className={styles.errorContainer}>
-              <span translate="no">{translate('errorSubjectInput')}</span>
-              <AiOutlineExclamationCircle
-                className={styles.iconExclamationEmail}
-              />
-            </div>
-          )}
-        </div>
-        <div className={styles.inputMessageContainer}>
-          <textarea
-            className={styles.inputMessage}
-            translate="no"
-            style={{
-              borderBottom: errors.Message
-                ? '1px solid #ff6f5b'
-                : '1px solid #fff',
-            }}
-            placeholder={translate('contactInputMessage').toUpperCase()}
-            rows={5}
-            {...register('Message', { required: true })}
-          ></textarea>
-          {errors.Message && (
-            <div className={styles.errorContainer}>
-              <span translate="no">{translate('errorMessageInput')}</span>
-              <AiOutlineExclamationCircle
-                className={styles.iconExclamationMessage}
-              />
-            </div>
-          )}
-        </div>
+        <form onSubmit={handleSubmit(onSubmit)} className={styles.formContact}>
+          <div className={styles.inputNameContainer}>
+            <input
+              className={styles.inputName}
+              style={{
+                borderBottom: errors.Name
+                  ? '1px solid #ff6f5b'
+                  : '1px solid #fff',
+              }}
+              type="text"
+              translate="no"
+              placeholder={translate('contactInputName').toUpperCase()}
+              {...register('Name', { required: true })}
+            />
+            {errors.Name && (
+              <div className={styles.errorContainer}>
+                <span translate="no">{translate('errorNameInput')}</span>
+                <AiOutlineExclamationCircle
+                  className={styles.iconExclamationName}
+                />
+              </div>
+            )}
+          </div>
+          <div className={styles.inputEmailContainer}>
+            <input
+              translate="no"
+              className={styles.inputEmail}
+              style={{
+                borderBottom: errors.Subject
+                  ? '1px solid #ff6f5b'
+                  : '1px solid #fff',
+              }}
+              type="text"
+              placeholder={translate('contactInputSubject').toUpperCase()}
+              {...register('Subject', {
+                required: true,
+                shouldUnregister: true,
+              })}
+            />
+            {errors.Subject && (
+              <div className={styles.errorContainer}>
+                <span translate="no">{translate('errorSubjectInput')}</span>
+                <AiOutlineExclamationCircle
+                  className={styles.iconExclamationEmail}
+                />
+              </div>
+            )}
+          </div>
+          <div className={styles.inputMessageContainer}>
+            <textarea
+              className={styles.inputMessage}
+              translate="no"
+              style={{
+                borderBottom: errors.Message
+                  ? '1px solid #ff6f5b'
+                  : '1px solid #fff',
+              }}
+              placeholder={translate('contactInputMessage').toUpperCase()}
+              rows={5}
+              {...register('Message', { required: true })}
+            ></textarea>
+            {errors.Message && (
+              <div className={styles.errorContainer}>
+                <span translate="no">{translate('errorMessageInput')}</span>
+                <AiOutlineExclamationCircle
+                  className={styles.iconExclamationMessage}
+                />
+              </div>
+            )}
+          </div>
 
-        <button translate="no" type="submit">
-          {translate('contactButtonSubmit')}
-        </button>
-      </form>
+          <button translate="no" type="submit">
+            {translate('contactButtonSubmit')}
+          </button>
+        </form>
+      </div>
     </div>
   );
 };
