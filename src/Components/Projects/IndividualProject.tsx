@@ -129,10 +129,12 @@ const IndividualProject = () => {
                 )}
               </div>
               <div className={styles.projectUrls}>
-                <a target="__blank" href={project.urlProject}>
-                  <p translate="no">{translate('viewProject')}</p>
-                  <CgWebsite />
-                </a>
+                {project.urlProject && (
+                  <a target="__blank" href={project.urlProject}>
+                    <p translate="no">{translate('viewProject')}</p>
+                    <CgWebsite />
+                  </a>
+                )}
                 <a target="__blank" href={project.urlGitHub}>
                   <p translate="no">{translate('viewCode')}</p>
                   <FaGithub />

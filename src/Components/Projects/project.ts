@@ -2,7 +2,7 @@ export interface Project {
   srcImage: string;
   altImage: string;
   urlGitHub: string;
-  urlProject: string;
+  urlProject?: string;
   title: string;
   description: {
     pt: {
@@ -18,7 +18,7 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    srcImage: '/AnimaisFantásticos.webp',
+    srcImage: '/AnimaisFantasticos.webp',
     description: {
       pt: {
         text: 'O projeto foi desenvolvido utilizando JavaScript e incorpora um carrossel tanto vertical quanto horizontal, juntamente com um accordion. Além disso, apresenta animações de entrada e saída dos elementos para uma experiência mais dinâmica e interativa.',
@@ -36,7 +36,7 @@ export const projects: Project[] = [
       'https://animais-fantasticos-git-master-julio-cesar-w-pedros-projects.vercel.app/',
   },
   {
-    srcImage: '/public/Bikcraft.webp',
+    srcImage: 'Bikcraft.webp',
     description: {
       pt: {
         text: 'Este projeto foi construído utilizando HTML, CSS e JavaScript, e inclui uma página de compras onde os usuários podem customizar suas próprias bicicletas.',
@@ -48,13 +48,13 @@ export const projects: Project[] = [
     title: 'Bikcraft',
     mainCategory: 'javascript',
     otherCategories: ['html', 'css'],
-    altImage: 'Projeto AnimaisFantásticos',
+    altImage: 'Projeto Bikcraft',
     urlGitHub: 'https://github.com/JuliocesarWpedro/Bikcraft',
     urlProject: 'https://juliocesarwpedro.github.io/Bikcraft/',
   },
   {
     srcImage: '/ClothingStore.webp',
-    title: 'devstore',
+    title: 'Clothing store',
     mainCategory: 'next',
     otherCategories: ['react', 'typescript', 'scss'],
     description: {
@@ -89,6 +89,7 @@ export const projects: Project[] = [
   },
   {
     srcImage: '/dogs.webp',
+    title: 'Dogs',
     description: {
       pt: {
         text: 'Desenvolvido em React, este projeto é uma plataforma de rede social que permite comentários em posts, postagens de conteúdo e possui um sistema de login. Para fins de teste, utilize a palavra "dog" como nome de usuário e senha.',
@@ -97,10 +98,10 @@ export const projects: Project[] = [
         text: 'Developed in React, this project is a social networking platform that allows comments on posts, content posts and has a login system. For testing purposes, use the word "dog" as the username and password.',
       },
     },
-    title: 'Dogs',
+
     mainCategory: 'react',
     otherCategories: ['css'],
-    altImage: 'Projeto AnimaisFantásticos',
+    altImage: 'Projeto Dogs',
     urlGitHub: 'https://github.com/JuliocesarWpedro/dogs',
     urlProject: 'https://dogs-julio-cesar-w-pedros-projects.vercel.app/',
   },
