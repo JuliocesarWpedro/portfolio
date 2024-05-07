@@ -18,7 +18,7 @@ const Contact = () => {
   }
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
-    const destinatario = 'juliowanke@gmail.com';
+    const destinatario = process.env.GMAIL_CONTACT;
     const assunto = data.Subject;
     const corpo =
       currentLanguage === 'pt'
