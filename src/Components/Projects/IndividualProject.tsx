@@ -9,6 +9,7 @@ import { PiKeyReturnFill } from 'react-icons/pi';
 import { FaReact, FaHtml5, FaCss3Alt, FaNode, FaGithub } from 'react-icons/fa';
 import { IoLogoJavascript } from 'react-icons/io5';
 import { BiLogoTypescript } from 'react-icons/bi';
+import { SiStyledcomponents } from 'react-icons/si';
 import {
   SiNextdotjs,
   SiExpress,
@@ -36,6 +37,7 @@ const categoryIconMap: CategoryIconMap = {
   zustand: null,
   mongodb: <SiMongodb />,
   express: <SiExpress />,
+  styledComponents: <SiStyledcomponents />,
 };
 
 const IndividualProject = () => {

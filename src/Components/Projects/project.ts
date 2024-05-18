@@ -53,6 +53,29 @@ export const projects: Project[] = [
     urlProject: 'https://juliocesarwpedro.github.io/Bikcraft/',
   },
   {
+    srcImage: '/Eccomerce.webp',
+    title: 'Eccomerce',
+    mainCategory: 'next',
+    otherCategories: [
+      'react',
+      'typescript',
+      'styled-components',
+      'TanStack Query',
+      'Swiper',
+    ],
+    description: {
+      pt: {
+        text: 'Este projeto inclui diversas funcionalidades para aprimorar a experiência do usuário, como paginação dinâmica através da URL do site, permitindo uma navegação mais eficiente. Além disso, implementamos um filtro de produtos e opções de ordenação por novidades, preço crescente e decrescente. Também disponibilizamos uma barra de pesquisa de produtos e um carrinho de compras, onde é possível alterar a quantidade dos itens selecionados. O projeto foi realizado com: Next.js 14, styled-components, TanStack Query para requisições e cacheamento, e swiper para paginação.',
+      },
+      en: {
+        text: "This project includes several features to improve the user experience, such as dynamic pagination through the website's URL, allowing for more efficient navigation. Furthermore, we implemented a product filter and sorting options by new arrivals, ascending and descending prices. We also provide a product search bar and a shopping cart, where you can change the quantity of selected items. The project was carried out with: Next.js 14, styled-components, TanStack Query for requests and caching, and swiper for pagination.",
+      },
+    },
+    altImage: 'Projeto Eccomerce',
+    urlGitHub: 'https://github.com/JuliocesarWpedro/ecommerce',
+    urlProject: 'https://ecommerce-julio-cesar-w-pedros-projects.vercel.app/',
+  },
+  {
     srcImage: '/ClothingStore.webp',
     title: 'Clothing store',
     mainCategory: 'next',
